@@ -10,6 +10,6 @@
 	<mappers>
 		<!-- mapper resource="net/linghou/erp/salesorder/mapper/SalesOrder.xml" 
 			/> -->
-		<package name="net.linghou.erp.salesorder.mapper" />
+		<package name="net.linghou.erp.sellorder.mapper" />
 	</mappers>
 </configuration>

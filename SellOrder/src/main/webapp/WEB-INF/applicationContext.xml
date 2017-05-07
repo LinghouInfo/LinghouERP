@@ -48,6 +48,6 @@
 	 -->
 	
 	<context:annotation-config />
-	<context:component-scan base-package="net.linghou.erp.salesorder" /> 
+	<context:component-scan base-package="net.linghou.erp.sellorder" /> 
 
 </beans>
