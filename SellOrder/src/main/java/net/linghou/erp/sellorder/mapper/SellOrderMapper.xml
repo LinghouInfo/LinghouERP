@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
  <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="net.linghou.erp.salesorder.mapper.SalesOrderMapper">
+<mapper namespace="net.linghou.erp.sellorder.mapper.SellOrderMapper">
 
 
 	<select id="findOne" parameterType="java.lang.Long"
-		resultType="net.linghou.erp.salesorder.domain.SalesOrder">
+		resultType="net.linghou.erp.sellorder.domain.SellOrder">
 		select
 		*
 		from
@@ -13,7 +13,7 @@
 		where id=#{id}
 	</select>
 
-	<update id="update" parameterType="net.linghou.erp.salesorder.domain.SalesOrder">
+	<update id="update" parameterType="net.linghou.erp.sellorder.domain.SellOrder">
 		update
 		acc_account
 		set
@@ -33,7 +33,7 @@
 	<!-- ==== Following are special methods ===== -->
 
 
-	<insert id="register" parameterType="net.linghou.erp.salesorder.domain.SalesOrder"
+	<insert id="register" parameterType="net.linghou.erp.sellorder.domain.SellOrder"
 		flushCache="true" statementType="PREPARED" keyProperty="id" keyColumn=""
 		useGeneratedKeys="true" timeout="20">
 		<!-- 
