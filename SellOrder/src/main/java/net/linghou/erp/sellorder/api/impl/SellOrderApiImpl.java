@@ -1,4 +1,4 @@
-package net.linghou.erp.sellorder.api;
+package net.linghou.erp.sellorder.api.impl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -21,7 +21,7 @@ import net.linghou.erp.sellorder.mapper.AreasMapper;
 @Controller
 @ResponseBody
 @RequestMapping(path = "/")
-public class TestController{
+public class SellOrderApiImpl implements net.linghou.erp.sellorder.api.LocalApi{
 	
 @Autowired
 private AreasMapper  am;
