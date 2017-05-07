@@ -1,4 +1,4 @@
-package net.linghou.erp.salesorder.domain;
+package net.linghou.erp.sellorder.domain;
 		/**仓库类*/
 public class Warehouse {
 	/**仓库ID*/

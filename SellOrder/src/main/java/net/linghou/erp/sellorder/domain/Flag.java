@@ -1,4 +1,4 @@
-package net.linghou.erp.salesorder.domain;
+package net.linghou.erp.sellorder.domain;
 /**旗帜类*/
 public class Flag {
 	/**旗帜ID*/

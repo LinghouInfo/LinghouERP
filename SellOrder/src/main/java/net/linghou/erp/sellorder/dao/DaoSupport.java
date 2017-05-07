@@ -1,4 +1,4 @@
-package net.linghou.erp.salesorder.dao;
+package net.linghou.erp.sellorder.dao;
 import java.util.List;
 
 import javax.annotation.Resource;

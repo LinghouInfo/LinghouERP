@@ -1,4 +1,4 @@
-package net.linghou.erp.salesorder.api;
+package net.linghou.erp.sellorder.api;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 
-import net.linghou.erp.salesorder.domain.Areas;
-import net.linghou.erp.salesorder.domain.SellOrderItem;
-import net.linghou.erp.salesorder.mapper.AreasMapper;
+import net.linghou.erp.sellorder.domain.Areas;
+import net.linghou.erp.sellorder.domain.SellOrderItem;
+import net.linghou.erp.sellorder.mapper.AreasMapper;
 
 @Controller
 @ResponseBody

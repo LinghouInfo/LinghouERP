@@ -1,4 +1,4 @@
-package net.linghou.erp.salesorder.domain;
+package net.linghou.erp.sellorder.domain;
 
 import java.math.BigDecimal;
 

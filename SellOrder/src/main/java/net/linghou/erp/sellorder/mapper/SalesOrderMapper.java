@@ -1,7 +1,8 @@
-package net.linghou.erp.salesorder.mapper;
+package net.linghou.erp.sellorder.mapper;
 
 import org.springframework.stereotype.Repository;
-import net.linghou.erp.salesorder.domain.SalesOrder;
+
+import net.linghou.erp.sellorder.domain.SalesOrder;
 
 @Repository
 public interface SalesOrderMapper {

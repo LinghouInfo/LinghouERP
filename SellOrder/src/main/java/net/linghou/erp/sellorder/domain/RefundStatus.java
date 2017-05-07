@@ -1,4 +1,4 @@
-package net.linghou.erp.salesorder.domain;
+package net.linghou.erp.sellorder.domain;
 /**退款状态*/
 public class RefundStatus {
 	/**状态ID*/
