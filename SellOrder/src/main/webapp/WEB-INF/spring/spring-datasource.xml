@@ -62,6 +62,7 @@
 		<property name="maxOpenPreparedStatements">
 			<value>20</value>
 		</property>
+		 <property name="filters" value="stat,wall" />
 	</bean>
 
 	<bean id="transactionManager"
