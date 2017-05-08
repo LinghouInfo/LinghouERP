@@ -38,6 +38,8 @@
                         <value>WriteNullNumberAsZero</value>
                     </list>
                 </property>
+	                <!-- 配置监控统计拦截的filters,和防sql注入 -->
+	                <property name="filters" value="stat,wall">          	
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
