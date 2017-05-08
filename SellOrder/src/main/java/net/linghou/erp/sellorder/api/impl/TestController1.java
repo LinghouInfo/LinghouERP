@@ -58,6 +58,7 @@ public class TestController1 {
 	@RequestMapping(path = "/index", method = RequestMethod.GET)
 	public Object startView() {
 		System.out.println(1);
+		
 		return "/BasicInfo/brand/findBrand";
 	}
 	
