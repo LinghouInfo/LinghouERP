@@ -22,36 +22,5 @@ import net.linghou.erp.sellorder.mapper.AreasMapper;
 @ResponseBody
 @RequestMapping(path = "/")
 public class SellOrderApiImpl implements net.linghou.erp.sellorder.api.LocalApi{
-	
-@Autowired
-private AreasMapper  am;
-
-	@RequestMapping(path="/test1",method=RequestMethod.GET)
-	public Object test(){
-		List<Areas> areas=am.findAll();
-		return	areas;
-	}
-	
-	@RequestMapping(path = "/test", method = RequestMethod.GET)
-	public Object test(ModelMap model) {
-		BigDecimal d=new BigDecimal(20.00);
-		BigDecimal c=new BigDecimal(25.00);
-		SellOrderItem se=new SellOrderItem();
-		se.setCostPrice(d);
-		se.setDiscountMoney(c);		
-		return se;
-	}
-	
-	/**订单测试接口*/
-	@RequestMapping(path = "/test2", method = RequestMethod.POST)
-	public Object test3(@RequestParam Map sellorderitem){
-		String mapJson = sellorderitem.toString();
-		mapJson=mapJson.replace("=","");
-		mapJson=mapJson.substring(1, mapJson.length());
-		mapJson=mapJson.substring(0, mapJson.length()-1);
-		System.out.println(mapJson);
-		SellOrderItem item=JSON.parseObject(mapJson, SellOrderItem.class);	
-		return item;
-	}
 
 }

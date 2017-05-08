@@ -1,10 +1,14 @@
 package net.linghou.erp.sellorder.domain;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class SellOrder {
-	/** erp订单ID */
-	private String orderId;
+
+	/** erp订单ID 自增ID */
+	private int orderId;
 	/**
 	 * 交易状态。可选值: * TRADE_NO_CREATE_PAY(没有创建支付宝交易) * WAIT_BUYER_PAY(等待买家付款) *
 	 * SELLER_CONSIGNED_PART(卖家部分发货) * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) *
@@ -84,13 +88,13 @@ public class SellOrder {
 	/** 付款帐号 */
 	private String payAccount;
 	/** 到帐状态 */
-	private String paymentStatus;
+	private PaymentStatu paymentStatus;
 	/** 到帐金额 */
 	private BigDecimal paidIn;
 	/** 支付手续费，信用卡、花呗、白条等 */
 	private BigDecimal handlingCharge;
 	/** 付款帐单号 */
-	private String paymentNumber;
+	private String payMentNumber;
 	/** 订单利润 */
 	private BigDecimal profit;
 	/** 预计重量，所有单品重量之和 */
@@ -99,26 +103,41 @@ public class SellOrder {
 	private BigDecimal grossWeight;
 	/** 是否称重 */
 	private Boolean isWeighed;
-	/** 物流公司Id */
-	private Long logisticsID;
-	/** 物流公司名称 */
-	private String logisticsName;
+
+	/**
+	 * 物流公司Id private Long logisticsID; 物流公司名称 private String logisticsName;
+	 */
+
+	/** 物流公司 */
+	private Logistics logistics;
+
 	/** 物流单号 */
 	private String trackingNo;
-	/** 订单来源Id，指ERP系统中存储的平台ID */
-	private Long sourceId;
-	/** 订单来源名称，指平台名称 */
-	private String sourceName;
-	/** 店铺Id */
-	private Long shopId;
-	/** 店铺名称 */
-	private String shopName;
+
+	/**
+	 * 订单来源Id，指ERP系统中存储的平台ID private Long sourceId; /** 订单来源名称，指平台名称 private
+	 * String sourceName;
+	 * 
+	 */
+
+	/** 订单来源信息 */
+	private SellOrderSource source;
+
+	/**
+	 * 店铺Id private Long shopId; 店铺名称 private String shopName;
+	 * 
+	 */
+	/** 店铺信息 */
+	private Shop shop;
+
 	/** 来源单号，指淘宝、天猫、京东平台生成的原始单号 */
 	private String srcOrderNo;
 	/** API、手工、售后等方式 */
 	private String createType;
+
 	/** 付款时间 */
 	private java.util.Date payedTime;
+
 	/** 订单创建时间，和原始订单的创建时间一致 */
 	private java.util.Date created;
 	/** 录入时间，原始订单进入ERP之后，系统登记为ERP SellOrder订单的时间 */
@@ -145,18 +164,30 @@ public class SellOrder {
 	private Boolean needInvoice;
 	/** 发票抬头 */
 	private String invoiceTitle;
+
+	public void setItems(ArrayList<SellOrderItem> items) {
+		this.items = items;
+	}
+
 	/** 发票内容 */
 	private String invoiceContent;
 	/** 是否已打印发票 */
 	private Boolean isInvoicePrinted;
 	/** 发票编号 */
 	private String invoiceCode;
-	/** 付款方式 */
-	private String paymentTerms;
-	/** 发货仓库Id */
-	private Long warehouseId;
-	/** 发货仓库名称 */
-	private String warehouseName;
+
+	/**
+	 * 付款方式 private String paymentTerms;
+	 */
+	private PayMentTerm payMentTerm;
+
+	/**
+	 * 发货仓库Id private Long warehouseId; 发货仓库名称 private String warehouseName;
+	 * 
+	 */
+	/** 发货仓库 */
+	private Warehouse warehouse;
+
 	/** 业务员 */
 	private String salesman;
 	/** 审单员 */
@@ -193,69 +224,82 @@ public class SellOrder {
 	private String def4;
 	private String def5;
 
-	public java.util.List<SellOrderItem> sellOrderItem;
+	public ArrayList<SellOrderItem> items = new ArrayList<SellOrderItem>();
+	public HashMap<String, SellOrderItem> items1 = new HashMap<String, SellOrderItem>();
 	public ValueSOStatus valueSOStatus;
 
-	/** @pdGenerated default getter */
-	public java.util.List<SellOrderItem> getSellOrderItem() {
-		if (sellOrderItem == null)
-			sellOrderItem = new java.util.ArrayList<SellOrderItem>();
-		return sellOrderItem;
+	public ArrayList<SellOrderItem> getItems() {
+		return items;
 	}
 
-	/** @pdGenerated default iterator getter */
-	public java.util.Iterator getIteratorSellOrderItem() {
-		if (sellOrderItem == null)
-			sellOrderItem = new java.util.ArrayList<SellOrderItem>();
-		return sellOrderItem.iterator();
+	public HashMap<String, SellOrderItem> getItems1() {
+		return items1;
 	}
 
 	/**
 	 * @pdGenerated default setter
 	 * @param newSellOrderItem
 	 */
-	public void setSellOrderItem(java.util.List<SellOrderItem> newSellOrderItem) {
+
+	public void setSellOrderItem(HashSet<SellOrderItem> newSellOrderItem) {
 		removeAllSellOrderItem();
 		for (java.util.Iterator iter = newSellOrderItem.iterator(); iter.hasNext();)
-			addSellOrderItem((SellOrderItem) iter.next());
+			addItem((SellOrderItem) iter.next());
 	}
 
 	/**
 	 * @pdGenerated default add
 	 * @param newSellOrderItem
 	 */
-	public void addSellOrderItem(SellOrderItem newSellOrderItem) {
-		if (newSellOrderItem == null)
-			return;
-		if (this.sellOrderItem == null)
-			this.sellOrderItem = new java.util.ArrayList<SellOrderItem>();
-		if (!this.sellOrderItem.contains(newSellOrderItem))
-			this.sellOrderItem.add(newSellOrderItem);
+
+	public void addItem(SellOrderItem soi) {
+		if (this.items1.containsKey(soi.getSpecCode())) {
+			int origNum = this.items1.get(soi.getSpecCode()).getNum();
+			int newNum = soi.getNum();
+			this.items1.get(soi.getSpecCode()).setNum(origNum + newNum);
+		} else {
+			this.items1.put(soi.getSpecCode(), soi);
+		}
 	}
 
 	/**
 	 * @pdGenerated default remove
 	 * @param oldSellOrderItem
 	 */
-	public void removeSellOrderItem(SellOrderItem oldSellOrderItem) {
-		if (oldSellOrderItem == null)
-			return;
-		if (this.sellOrderItem != null)
-			if (this.sellOrderItem.contains(oldSellOrderItem))
-				this.sellOrderItem.remove(oldSellOrderItem);
+
+	public void removeItem(SellOrderItem soi) {
+		if (this.items1.containsKey(soi.getSpecCode())) {
+			int origNum = this.items1.get(soi.getSpecCode()).getNum();
+			int newNum = soi.getNum();
+			this.items1.get(soi.getSpecCode()).setNum(origNum - newNum);
+			if (this.items1.get(soi.getSpecCode()).getNum() == 0) {
+				this.items1.remove(soi.getSpecCode());
+
+			}
+		} else {
+			// throws exception
+		}
+	}
+
+	public Shop getShop() {
+		return shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
 	}
 
 	/** @pdGenerated default removeAll */
 	public void removeAllSellOrderItem() {
-		if (sellOrderItem != null)
-			sellOrderItem.clear();
+		if (this.items != null)
+			this.items.clear();
 	}
 
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 
@@ -459,6 +503,14 @@ public class SellOrder {
 		this.freightReceived = freightReceived;
 	}
 
+	public SellOrderSource getSource() {
+		return source;
+	}
+
+	public void setSource(SellOrderSource source) {
+		this.source = source;
+	}
+
 	public BigDecimal getFreightSum() {
 		return freightSum;
 	}
@@ -469,6 +521,22 @@ public class SellOrder {
 
 	public BigDecimal getFreightPaid() {
 		return freightPaid;
+	}
+
+	public PayMentTerm getPayMentTerm() {
+		return payMentTerm;
+	}
+
+	public void setPayMentTerm(PayMentTerm payMentTerm) {
+		this.payMentTerm = payMentTerm;
+	}
+
+	public Warehouse getWarehouse() {
+		return warehouse;
+	}
+
+	public void setWarehouse(Warehouse warehouse) {
+		this.warehouse = warehouse;
 	}
 
 	public void setFreightPaid(BigDecimal freightPaid) {
@@ -515,11 +583,11 @@ public class SellOrder {
 		this.payAccount = payAccount;
 	}
 
-	public String getPaymentStatus() {
+	public PaymentStatu getPaymentStatus() {
 		return paymentStatus;
 	}
 
-	public void setPaymentStatus(String paymentStatus) {
+	public void setPaymentStatus(PaymentStatu paymentStatus) {
 		this.paymentStatus = paymentStatus;
 	}
 
@@ -539,12 +607,12 @@ public class SellOrder {
 		this.handlingCharge = handlingCharge;
 	}
 
-	public String getPaymentNumber() {
-		return paymentNumber;
+	public String getPayMentNumber() {
+		return payMentNumber;
 	}
 
-	public void setPaymentNumber(String paymentNumber) {
-		this.paymentNumber = paymentNumber;
+	public void setPayMentNumber(String paymentNumber) {
+		this.payMentNumber = paymentNumber;
 	}
 
 	public BigDecimal getProfit() {
@@ -579,60 +647,12 @@ public class SellOrder {
 		this.isWeighed = isWeighed;
 	}
 
-	public Long getLogisticsID() {
-		return logisticsID;
-	}
-
-	public void setLogisticsID(Long logisticsID) {
-		this.logisticsID = logisticsID;
-	}
-
-	public String getLogisticsName() {
-		return logisticsName;
-	}
-
-	public void setLogisticsName(String logisticsName) {
-		this.logisticsName = logisticsName;
-	}
-
 	public String getTrackingNo() {
 		return trackingNo;
 	}
 
 	public void setTrackingNo(String trackingNo) {
 		this.trackingNo = trackingNo;
-	}
-
-	public Long getSourceId() {
-		return sourceId;
-	}
-
-	public void setSourceId(Long sourceId) {
-		this.sourceId = sourceId;
-	}
-
-	public String getSourceName() {
-		return sourceName;
-	}
-
-	public void setSourceName(String sourceName) {
-		this.sourceName = sourceName;
-	}
-
-	public Long getShopId() {
-		return shopId;
-	}
-
-	public void setShopId(Long shopId) {
-		this.shopId = shopId;
-	}
-
-	public String getShopName() {
-		return shopName;
-	}
-
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
 	}
 
 	public String getSrcOrderNo() {
@@ -787,28 +807,20 @@ public class SellOrder {
 		this.invoiceCode = invoiceCode;
 	}
 
-	public String getPaymentTerms() {
-		return paymentTerms;
+	public PayMentTerm getPaymentTerm() {
+		return payMentTerm;
 	}
 
-	public void setPaymentTerms(String paymentTerms) {
-		this.paymentTerms = paymentTerms;
+	public void setPaymentTerm(PayMentTerm paymentTerm) {
+		this.payMentTerm = paymentTerm;
 	}
 
-	public Long getWarehouseId() {
-		return warehouseId;
+	public Logistics getLogistics() {
+		return logistics;
 	}
 
-	public void setWarehouseId(Long warehouseId) {
-		this.warehouseId = warehouseId;
-	}
-
-	public String getWarehouseName() {
-		return warehouseName;
-	}
-
-	public void setWarehouseName(String warehouseName) {
-		this.warehouseName = warehouseName;
+	public void setLogistics(Logistics logistics) {
+		this.logistics = logistics;
 	}
 
 	public String getSalesman() {

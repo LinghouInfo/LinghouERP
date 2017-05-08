@@ -81,7 +81,7 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-		<property name="basePackage" value="net.linghou.erp.sellorder.mapper" />
+		<property name="basePackage" value="net.linghou.erp.salesorder.mapper" />
 	</bean>
 
 </beans>

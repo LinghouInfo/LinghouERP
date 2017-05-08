@@ -1,14 +1,16 @@
 package net.linghou.erp.sellorder.domain;
 
 import java.math.BigDecimal;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.List;
+import com.sun.xml.internal.xsom.impl.scd.Iterators.Map;
 
 public class SellOrderItem {
-	/** 璁㈠崟椤圭洰Id */
-	private String itemId;
-	/** 璁㈠崟Id */
-	private String orderId;
-	/** 浠撳簱Id */
+	/** 订单项目Id 自增列 */
+	private int itemId;
+	/** 订单Id */
+	private int orderId;
+	/** 仓库Id */
 	private Long warehouseId;
 	/** warehouseName */
 	private String warehouseName;
@@ -16,66 +18,109 @@ public class SellOrderItem {
 	private String spuCode;
 	/** spuName */
 	private String spuName;
-	/** spec缂栫爜 */
+	/** spec编码 */
 	private String specCode;
-	/** spec鍚嶇О */
+	/** spec名称 */
 	private String specName;
-	/** spec鏉＄爜 */
+	/** spec条码 */
 	private String specBarcode;
-	/** sku缂栫爜 */
+	/** sku编码 */
 	private String skuCode;
-	/** sku鎽樿 */
+	/** sku摘要 */
 	private String skuSummary;
-	/** 璐拱鏁伴噺 */
+	/** 购买数量 */
 	private int num;
-	/** 宸插彂鏁伴噺 */
+	/** 已发数量 */
 	private int sendNum;
-	/** 鏄惁瀹炵墿鍟嗗搧 */
+	/** 是否实物商品 */
 	private Boolean isReal;
-	/** 鏄惁璧犲搧 */
+	/** 是否赠品 */
 	private Boolean isGift;
-	/** 骞冲彴spu缂栫爜 */
+	/** 平台spu编码 */
 	private String platformSpuCode;
-	/** 骞冲彴spu鍚嶇О */
+	/** 平台spu名称 */
 	private String platformSpuName;
-	/** 骞冲彴spec缂栫爜 */
+	/** 平台spec编码 */
 	private String platformSpecCode;
-	/** 骞冲彴spec鍚嶇О */
+	/** 平台spec名称 */
 	private String platformSpecName;
-	/** 鍘熶环(鍚婄墝ORIG.) */
+	/** 原价(吊牌ORIG.) */
 	private BigDecimal originalPrice;
-	/** 璇pu spec锛堝湪鏈粨搴撲腑鐨勶級鍔犳潈骞冲潎浠凤紝鏍规嵁涓嶅悓璁＄畻鏂规硶锛屽姞鏉冨钩鍧囦环鏈夋墍涓嶅悓 */
+	/** 该spu spec（在本仓库中的）加权平均价，根据不同计算方法，加权平均价有所不同 */
 	private BigDecimal vwaPrice;
-	/** 閲囪喘鍗曚笂鐨勯噰璐环锛屽綋sku鍙湁涓�涓噰璐」鐩椂锛岃sku鍙互璁板綍閲囪喘鍗曚笂鐨勯噰璐环鏍� */
+	/** 采购单上的采购价，当sku只有一个采购项目时，该sku可以记录采购单上的采购价格 */
 	private BigDecimal purchasePrice;
-	/** 浼樻儬鍒嗘憡 */
+	/** 优惠分摊 */
 	private BigDecimal discountMoney;
-	/** 鍏ュ笎鎴愭湰浠� */
+	/** 入帐成本价 */
 	private BigDecimal costPrice;
-	/** 鎬讳环閲戦 */
+	/** 总价金额 */
 	private BigDecimal totalAccount;
-	/** 鏈�缁堟姌鍚庝环 */
+	/** 最终折后价 */
 	private BigDecimal sum;
-	/** 椤圭洰鍒╂鼎 */
+	/** 项目利润 */
 	private BigDecimal projectProfit;
-	/** 瀛愰」闆嗗悎 */
+	private HashSet<Spec> spec;
+
+	@Override
+	public boolean equals(Object object) {
+		if (this.specCode.equals(((SellOrderItem) object).getSpecCode())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void addSpec(Spec newSpec) {
+
+		if (newSpec == null) {
+			return;
+		}
+		if (this.spec == null) {
+			this.spec = new HashSet<Spec>();
+		}
+
+		if (!this.spec.contains(newSpec)) {
+
+			this.spec.add(newSpec);
+
+		}
+
+	}
+
+	public void removeSpec(Spec oldSpec) {
+		if (this.spec == null)
+			return;
+		if (this.spec != null)
+			if (this.spec.contains(oldSpec))
+				this.spec.remove(oldSpec);
+	}
+
+	public HashSet<Spec> getSpec() {
+		return spec;
+	}
+
+	public void setSpec(HashSet<Spec> spec) {
+		this.spec = spec;
+	}
+
+	/** 子项集合 */
 	@SuppressWarnings("rawtypes")
 	private Map orderItems;
 
-
-	public String getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
 
-	public void setItemId(String itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 
-	public String getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 

@@ -3,51 +3,369 @@
 
 <mapper namespace="net.linghou.erp.sellorder.mapper.SellOrderMapper">
 
-
-	<select id="findOne" parameterType="java.lang.Long"
-		resultType="net.linghou.erp.sellorder.domain.SellOrder">
-		select
-		*
-		from
-		acc_account
-		where id=#{id}
-	</select>
-
-	<update id="update" parameterType="net.linghou.erp.sellorder.domain.SellOrder">
-		update
-		acc_account
-		set
-		username = #{username},
-		password = #{password},
-		accountNonExpired=#{accountNonExpired},
-		accountNonLocked=#{accountNonLocked},
-		credentialsNonExpired=#{credentialsNonExpired},
-		registrationDate=#{registrationDate},
-		lastLogin=#{lastLogin}
-
-		where id =
-		#{id}
-	</update>
-
-
-	<!-- ==== Following are special methods ===== -->
-
-
-	<insert id="register" parameterType="net.linghou.erp.sellorder.domain.SellOrder"
-		flushCache="true" statementType="PREPARED" keyProperty="id" keyColumn=""
-		useGeneratedKeys="true" timeout="20">
-		<!-- 
-		<selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
-			SELECT LAST_INSERT_ID(); 
-		</selectKey>
-		-->
-		INSERT INTO 
-		acc_account
-		(username, password, account_non_expired, account_non_locked,
-		credentials_non_expired, registration_date)
+	<insert id="addSellOrder" parameterType="net.linghou.erp.sellorder.domain.SellOrder"
+		useGeneratedKeys="true" keyProperty="orderId">
+		INSERT INTO sell_order
 		VALUES
-		(#{username}, #{password}, #{accountNonExpired}, #{accountNonLocked},
-		#{credentialsNonExpired}, #{registrationDate})
+		(
+		#{orderId},#{status.statuId},#{status.statuName},
+		#{refundStatus.id},
+		#{takeDays},#{buyerNick}, #{erpMark},
+		#{sellerFlag.flagId},
+		#{buyTimes},
+		#{receiverName}, #{receiverPhone},
+		#{receiverCountry},
+		#{receiverState},
+		#{receiverCity}, #{receiverDistrict},
+		#{receiverAddress}, #{receiverShippingAddress},
+		#{receiverZip},
+		#{totalNumber},#{totalAccount},
+		#{discount},#{balance},
+		#{totalDiscount}, #{sum},#{payment},
+		#{refund},#{freightReceived},#{freightSum},#{freightPaid},
+		#{storageCharges}, #{platformCharges},
+		#{cogs},#{totalCost},
+		#{payAccount},
+		#{paymentStatus.paymentStatuId},#{paidIn},
+		#{handlingCharge},#{payMentNumber},
+		#{profit},
+		#{weight},#{grossWeight},
+		#{isWeighed},#{logistics.logisticsId},#{logistics.logisticsName},#{trackingNo},
+		#{source.sellOrderSourceId},
+		#{source.sellOrderSourceName},
+		#{shop.shopId},#{shop.shopName},#{srcOrderNo},#{createType},
+		#{payedTime},#{created}, #{inputedTime},
+		#{confirmedTime},
+		#{printedTime},#{preparedTime},#{stockOutTime},
+		#{weighedTime},
+		#{shippedTime},
+		#{printBatch}, #{printNo},#{prepareNo},
+		#{needInvoice},#{invoiceTitle},#{invoiceContent},#{isInvoicePrinted},
+		#{invoiceCode},#{payMentTerm.payMentTermId},#{warehouse.warehouseId},
+		#{warehouse.warehouseName}, #{salesman},
+		#{comfirmOpr}, #{pickOpr},
+		#{pickWrongTimes},
+		#{validateOpr},#{packOpr},
+		#{accountOpr},
+		#{deliverOpr},#{hasBuyerMemo},
+		#{buyerMemo}, #{hasSellerMemo},
+		#{sellerMemo}, #{printMemo},
+		#{itemsSummary},#{lastModifiedTime},#{def1},
+		#{def2},#{def3},#{def4},
+		#{def5}, #{valueSOStatus.statuId},
+		#{valueSOStatus.statuName});
 	</insert>
 
+	<update id="updateSellOrder" parameterType="SellOrder">
+		update sell_order
+		<set>
+			<if test="status.statuId!=null and status.statuId!='' or status.statuId>0">
+				status_id=#{status.statuId},
+			</if>
+			<if test="status.statuName!=null and status.statuName!=''">
+				status_name=#{status.statuName},
+			</if>
+			<if
+				test="refundStatus.id!=null and refundStatus.id!='' or refundStatus.id>0 ">
+				refund_status_id=#{refundStatus.id},
+			</if>
+			<if test="takeDays!=null and takeDays!='' or takeDays>0">
+				take_days=#{takeDays},
+			</if>
+			<if test="buyerNick!=null and buyerNick!=''">
+				buyer_nick=#{buyerNick},
+			</if>
+			<if test="erpMark!=null and erpMark!='' or erpMark>0">
+				erp_mark=#{erpMark},
+			</if>
+			<if
+				test="sellerFlag.flagId!=null and sellerFlag.flagId!='' or sellerFlag.flagId>0">
+				seller_flag_id=#{sellerFlag.flagId},
+			</if>
+			<if test="buyTimes!=null and buyTimes!='' or buyTimes>0">
+				buy_times=#{buyTimes},
+			</if>
+			<if test="receiverName!=null and receiverName!=''">
+				receiver_name=#{receiverName},
+			</if>
+			<if test="receiverPhone!=null and receiverPhone!=''">
+				receiver_phone=#{receiverPhone},
+			</if>
+			<if test="receiverCountry!=null and receiverCountry!=''">
+				receiver_country=#{receiverCountry},
+			</if>
+			<if test="receiverState!=null and receiverState!=''">
+				receiver_state=#{receiverState},
+			</if>
+			<if test="receiverCity!=null and receiverCity!=''">
+				receiver_city=#{receiverCity},
+			</if>
+			<if test="receiverDistrict!=null and receiverDistrict!=''">
+				receiver_district=#{receiverDistrict},
+			</if>
+			<if test="receiverAddress!=null and receiverAddress!=''">
+				receiver_address=#{receiverAddress},
+			</if>
+			<if test="receiverShippingAddress!=null and receiverShippingAddress!=''">
+				receiver_shipping_address=#{receiverShippingAddress},
+			</if>
+			<if test="receiverZip!=null and receiverZip!=''">
+				receiver_zip=#{receiverZip},
+			</if>
+			<if test="totalNumber!=null and totalNumber!='' or totalNumber>0">
+				total_number=#{totalNumber},
+			</if>
+			<if test="totalAccount!=null and totalAccount!='' or totalAccount>0">
+				total_account=#{totalAccount},
+			</if>
+			<if test="discount!=null and discount!='' or discount>0">
+				dis_count=#{discount},
+			</if>
+			<if test="balance!=null and balance!='' or balance>0">
+				balance=#{balance},
+			</if>
+			<if test="totalDiscount!=null and totalDiscount!='' or totalDiscount>0">
+				total_discount=#{totalDiscount},
+			</if>
+			<if test="sum!=null and sum!='' or sum>0">
+				sum=#{sum},
+			</if>
+			<if test="payment!=null and payment!='' or payment>0">
+				pay_ment=#{payment},
+			</if>
+			<if test="refund!=null and refund!='' or refund>0">
+				refund=#{refund},
+			</if>
+			<if
+				test="freightReceived!=null and freightReceived!='' or freightReceived>0">
+				freight_received=#{freightReceived},
+			</if>
+			<if test="freightSum!=null and freightSum!='' or freightSum>0">
+				freight_sum=#{freightSum},
+			</if>
+			<if test="freightPaid!=null and freightPaid!='' or freightPaid>0">
+				freight_paid=#{freightPaid},
+			</if>
+			<if test="storageCharges!=null and storageCharges!='' or storageCharges>0">
+				storage_charges=#{storageCharges},
+			</if>
+			<if
+				test="platformCharges!=null and platformCharges!='' or platformCharges>0">
+				platform_charges=#{platformCharges},
+			</if>
+			<if test="cogs!=null and cogs!='' or cogs>0">
+				cogs=#{cogs},
+			</if>
+			<if test="totalCost!=null and totalCost!='' or totalCost>0">
+				total_cost=#{totalCost}
+			</if>
+			<if test="payAccount!=null and payAccount!=''">
+				pay_account=#{payAccount},
+			</if>
+			<if
+				test="paymentStatus.paymentStatuId!=null and paymentStatus.paymentStatuId!='' or paymentStatus.paymentStatuId>0">
+				pay_ment_status_id=#{paymentStatus.paymentStatuId},
+			</if>
+			<if test="paidIn!=null and paidIn!='' or paidIn>0">
+				paid_in=#{paidIn},
+			</if>
+			<if test="handlingCharge!=null and handlingCharge!='' or handlingCharge>0">
+				handling_charge=#{handlingCharge},
+			</if>
+			<if test="payMentNumber!=null and payMentNumber!=''">
+				pay_ment_number=#{payMentNumber},
+			</if>
+			<if test="profit!=null and profit!='' or profit>0">
+				profit=#{profit},
+			</if>
+			<if test="weight!=null and weight!='' or weight>0">
+				weight=#{weight},
+			</if>
+			<if test="grossWeight!=null and grossWeight!='' or grossWeight>0">
+				gross_weight=#{grossWeight},
+			</if>
+			<if test="isWeighed!=null and isWeighed!=''">
+				is_weighed=#{isWeighed},
+			</if>
+			<if
+				test="logistics.logisticsId!=null and logistics.logisticsId!='' or logistics.logisticsId>0">
+				logistics_id=#{logistics.logisticsId},
+			</if>
+			<if test="logistics.logisticsName!=null and logistics.logisticsName!=''">
+				logistics_name=#{logistics.logisticsName},
+			</if>
+			<if test="trackingNo!=null and trackingNo!=''">
+				tracking_no=#{trackingNo},
+			</if>
+			<if
+				test="source.sellOrderSourceId!=null and source.sellOrderSourceId!='' or source.sellOrderSourceId>0">
+				source_id=#{source.sellOrderSourceId},
+			</if>
+			<if
+				test="source.sellOrderSourceName!=null and source.sellOrderSourceName!=''">
+				source_name=#{source.sellOrderSourceName},
+			</if>
+			<if test="shop.shopId!=null and shop.shopId!='' or shop.shopId>0">
+				shop_id=#{shop.shopId},
+			</if>
+			<if test="shop.shopName!=null and shop.shopName!=''">
+				shop_name=#{shop.shopName},
+			</if>
+			<if test="srcOrderNo!=null and srcOrderNo!=''">
+				src_order_no=#{srcOrderNo},
+			</if>
+			<!-- API、手工、售后等方式 -->
+			<if test="createType!=null and createType!='' ">
+				create_type=#{createType},
+			</if>
+			<if test="payedTime!=null and payedTime!=''">
+				payed_time=#{payedTime},
+			</if>
+			<!-- 订单创建时间 -->
+			<if test="created!=null and created!=''">
+				created=#{created},
+			</if>
+			<if test="inputedTime!=null and inputedTime!=''">
+				inputed_time=#{inputedTime},
+			</if>
+			<if test="confirmedTime!=null and confirmedTime!=''">
+				confirmed_time=#{confirmedTime},
+			</if>
+			<if test="printedTime!=null and printedTime!=''">
+				printed_time=#{printedTime},
+			</if>
+			<if test="preparedTime!=null and preparedTime!=''">
+				prepared_time=#{preparedTime},
+			</if>
+			<if test="stockOutTime!=null and stockOutTime!=''">
+				stock_out_time=#{stockOutTime},
+			</if>
+			<if test="weighedTime!=null and weighedTime!=''">
+				weighed_time=#{weighedTime},
+			</if>
+			<if test="shippedTime!=null and shippedTime!=''">
+				shipped_time=#{shippedTime},
+			</if>
+			<if test="printBatch!=null and printBatch!=''">
+				print_batch=#{printBatch},
+			</if>
+			<if test="printNo!=null and printNo!='' or printNo>0">
+				print_no=#{printNo},
+			</if>
+			<if test="prepareNo!=null and prepareNo!=''">
+				prepare_no=#{prepareNo},
+			</if>
+			<if test="needInvoice!=null and needInvoice!=''">
+				need_invoice=#{needInvoice},
+			</if>
+			<if test="invoiceTitle!=null and invoiceTitle!=''">
+				invoice_title=#{invoiceTitle},
+			</if>
+			<if test="invoiceContent!=null and invoiceContent!=''">
+				invoice_content=#{invoiceContent},
+			</if>
+			<if test="isInvoicePrinted!=null and isInvoicePrinted!=''">
+				is_invoice_printed=#{isInvoicePrinted},
+			</if>
+			<if test="invoiceCode!=null and invoiceCode!=''">
+				invoice_code=#{invoiceCode},
+			</if>
+			<if
+				test="payMentTerm.payMentTermId!=null and payMentTerm.payMentTermId!='' or payMentTerm.payMentTermId>0">
+				pay_ment_term_id=#{payMentTerm.payMentTermId},
+			</if>
+			<if
+				test="warehouse.warehouseId!=null and warehouse.warehouseId!='' or warehouse.warehouseId>0">
+				warehouse_id=#{warehouse.warehouseId},
+			</if>
+			<if test="warehouse.warehouseName!=null and warehouse.warehouseName!=''">
+				warehouse_name=#{warehouse.warehouseName},
+			</if>
+			<if test="salesman!=null and salesman!=''">
+				salesman=#{salesman},
+			</if>
+			<if test="comfirmOpr!=null and comfirmOpr!=''">
+				comfirm_opr=#{comfirmOpr},
+			</if>
+			<if test="pickOpr!=null and pickOpr!=''">
+				pick_opr=#{pickOpr},
+			</if>
+			<if test="pickWrongTimes!=null and pickWrongTimes!='' or pickWrongTimes>0">
+				pick_wrong_times=#{pickWrongTimes},
+			</if>
+			<if test="validateOpr!=null and validateOpr!=''">
+				validate_opr=#{validateOpr},
+			</if>
+			<if test="packOpr!=null and packOpr!=''">
+				pack_opr=#{packOpr},
+			</if>
+			<if test="accountOpr!=null and  accountOpr!=''">
+				account_opr=#{accountOpr},
+			</if>
+			<if test="deliverOpr!=null and deliverOpr!=''">
+				deliver_opr=#{deliverOpr},
+			</if>
+			<if test="hasBuyerMemo!=null and hasBuyerMemo!=''">
+				has_buyer_memo=#{hasBuyerMemo},
+			</if>
+			<if test="buyerMemo!=null and buyerMemo!=''">
+				buyer_memo=#{buyerMemo},
+			</if>
+			<if test="hasSellerMemo!=null and hasSellerMemo!=''">
+				has_seller_memo=#{hasSellerMemo},
+			</if>
+			<if test="sellerMemo!=null and sellerMemo!=''">
+				seller_memo=#{sellerMemo},
+			</if>
+			<if test="printMemo!=null and printMemo!=null">
+				print_memo=#{printMemo},
+			</if>
+			<if test="itemsSummary!=null and itemsSummary!=''">
+				items_summary=#{itemsSummary},
+			</if>
+			<if test="lastModifiedTime!=null and lastModifiedTime!=''">
+				last_modified_time=#{lastModifiedTime},
+			</if>
+			<if test="def1!=''  and def1!=''">
+				def1=#{def1},
+			</if>
+			<if test="def2!=''  and def2!=''">
+				def2=#{def2},
+			</if>
+			<if test="def3!=''  and def3!=''">
+				def3=#{def3},
+			</if>
+			<if test="def4!=''  and def4!=''">
+				def4=#{def5},
+			</if>
+			<if test="def5!=''  and def5!=''">
+				def5=#{def5},
+			</if>
+		</set>
+		where order_id=#{orderId};
+	</update>
+
+	<!-- 通过orderId删除SellOrder -->
+	<delete id="deleteSellOrder" parameterType="java.lang.Integer">
+		DELETE from
+		sell_order where order_id=#{id};
+	</delete>
+
+	<resultMap type="net.linghou.erp.sellorder.domain.SellOrder"
+		id="sellorder">
+		<id property="orderId" column="order_id" />
+		<!-- javaType="ArrayList" -->
+		<collection property="items" javaType="ArrayList"
+			ofType="net.linghou.erp.sellorder.domain.SellOrderItem">
+			<id property="itemId" column="item_id" />
+		</collection>
+	</resultMap>
+
+	<select id="findAll" resultMap="sellorder">
+		SELECT * from sell_order so
+		LEFT
+		JOIN
+		sell_order_item soi
+		ON so.order_id = soi.order_id
+	</select>
 </mapper>

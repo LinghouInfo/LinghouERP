@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.linghou.erp.sellorder.mapper.SellOrderItemMapper">
+	<!-- 通过orderId删除SellOrderItem -->
+	<delete id="delBatchSellOrderItemByOrderId" parameterType="java.lang.Integer">
+		DELETE from sell_order_item where order_id=#{orderId};
+	</delete>
+
+
+	<!-- 通过itemId删除SellOrder -->
+	<delete id="delOneSellOrderItem" parameterType="java.lang.Integer">
+		DELETE from
+		sell_order_item WHERE item_id=#{itemId};
+	</delete>
+
+	<insert id="saveSellOrderItems" parameterType="java.util.List">
+		insert into
+		sell_order_item
+		(order_id,warehouse_id,warehouse_name,spu_code,spu_name,spec_code,spec_name,spec_barcode,sku_code,sku_summary,num,send_num,is_real,is_gift,platform_spu_code,platform_spu_name,platform_spec_code,platform_spec_name,original_price,vwa_price,purchase_price,discount_money,cost_price,total_account,sum,project_profit)
+		VALUES
+		<foreach collection="list" item="list" index="index"
+			separator=",">
+			(#{list.orderId}, #{list.warehouseId},
+			#{list.warehouseName},
+			#{list.spuCode},#{list.spuName},
+			#{list.specCode},#{list.specName},
+			#{list.specBarcode},
+			#{list.skuCode},#{list.skuSummary}, #{list.num},
+			#{list.sendNum},
+			#{list.isReal},
+			#{list.isGift},#{list.platformSpuCode},
+			#{list.platformSpuName},
+			#{list.platformSpecCode},
+			#{list.platformSpecName},
+			#{list.originalPrice},#{list.vwaPrice},
+			#{list.purchasePrice},#{list.discountMoney}, #{list.costPrice},
+			#{list.totalAccount}, #{list.sum},#{list.projectProfit})
+		</foreach>
+	</insert>
+
+	<update id="updateSellOrderItem" parameterType="SellOrderItem">
+		update sell_order_item
+		<set>
+			<if test="orderId!=null and orderId!='' or orderId > 0 ">
+				order_id=#{orderId},
+			</if>
+
+			<if test="warehouseId!=null and warehouseId!='' or warehouseId> 0 ">
+				warehouse_id=#{warehouseId},
+			</if>
+
+			<if test="warehouseName!=null and warehouseName!=''">
+				warehouse_name=#{warehouseName},
+			</if>
+			<if test="spuCode!=null and spuCode!=''">
+				spu_code=#{spuCode},
+			</if>
+			<if test="spuName!=null and spuName!=''">
+				spu_name=#{spuName},
+			</if>
+			<if test="specCode!=null and specCode!=''">
+				spec_code=#{specCode},
+			</if>
+			<if test="specName!=null and specName!=''">
+				spec_name=#{specName},
+			</if>
+			<if test="specBarcode!=null and specBarcode!=''">
+				spec_barcode=#{specBarcode},
+			</if>
+			<if test="skuCode!=null and skuCode!=''">
+				sku_code=#{skuCode},
+			</if>
+			<if test="skuSummary!=null and skuSummary!=''">
+				sku_summary=#{skuSummary},
+			</if>
+			<if test="num!=null and num!='' or num>0">
+				num=#{num},
+			</if>
+			<if test="sendNum!=null and sendNum!='' or sendNum>0 ">
+				send_num=#{sendNum},
+			</if>
+			<if test="isReal!=null and isReal!=''">
+				is_real=#{isReal},
+			</if>
+			<if test="isGift!=null and sendNum!=''">
+				is_gift=#{isGift},
+			</if>
+			<if test="platformSpuCode!=null and platformSpuCode!=''">
+				platform_spu_code=#{platformSpuCode},
+			</if>
+			<if test="platformSpuName!=null and platformSpuName!=''">
+				platform_spu_name=#{platformSpuName},
+			</if>
+			<if test="platformSpecCode!=null and platformSpecCode!=''">
+				platform_spec_code=#{platformSpecCode}，
+			</if>
+			<if test="platformSpecName!=null and platformSpecName!=''">
+				platform_spec_name=#{platformSpecName},
+			</if>
+			<if test="originalPrice!=null and originalPrice!='' or originalPrice>0">
+				original_price=#{originalPrice},
+			</if>
+			<if test="vwaPrice!=null and vwaPrice!='' or vwaPrice>0">
+				vwa_price=#{vwaPrice},
+			</if>
+			<if test="purchasePrice!=null and purchasePrice!='' or purchasePrice>0">
+				purchase_price=#{purchasePrice},
+			</if>
+			<if test="discountMoney!=null and discountMoney!='' or discountMoney>0 ">
+				discount_money=#{discountMoney},
+			</if>
+			<if test="costPrice!=null and costPrice!='' or costPrice>0">
+				cost_price=#{costPrice},
+			</if>
+			<if test="totalAccount!=null and totalAccount!='' or totalAccount>0">
+				total_account=#{totalAccount},
+			</if>
+			<if test="sum!=null and sum!='' or sum>0 ">
+				sum=#{sum},
+			</if>
+			<if test="projectProfit!=null and projectProfit!='' or projectProfit>0">
+				project_profit=#{projectProfit}
+			</if>
+		</set>
+
+		where item_id=#{itemId};
+	</update>
+
+</mapper>

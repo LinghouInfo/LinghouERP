@@ -3,13 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	
 	<settings>
 		<setting name="cacheEnabled" value="true" />
+		<setting name="logImpl" value="STDOUT_LOGGING"/>
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
+	
+	 <typeAliases>
+	 	  <typeAlias type="net.linghou.erp.sellorder.domain.SellOrder" alias="SellOrder"/>
+	      <typeAlias type="net.linghou.erp.sellorder.domain.SellOrderItem" alias="SellOrderItem"/>
+	  </typeAliases>
+	
 	<mappers>
-		<!-- mapper resource="net/linghou/erp/salesorder/mapper/SellOrder.xml" 
+		<!-- mapper resource="net/linghou/erp/salesorder/mapper/SalesOrder.xml" 
 			/> -->
-		<package name="net.linghou.erp.sellorder.mapper" />
+
+		<package name="net.linghou.erp.sellorder.mapper.*" />
+	
 	</mappers>
+		
+	 
+ 
 </configuration>
