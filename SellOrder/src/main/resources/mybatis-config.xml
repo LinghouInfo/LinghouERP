@@ -16,7 +16,7 @@
 	  </typeAliases>
 	
 	<mappers>
-		<!-- mapper resource="net/linghou/erp/salesorder/mapper/SalesOrder.xml" 
+		<!-- mapper resource="net/linghou/erp/salesorder/mapper/SellOrder.xml" 
 			/> -->
 
 		<package name="net.linghou.erp.sellorder.mapper.*" />
