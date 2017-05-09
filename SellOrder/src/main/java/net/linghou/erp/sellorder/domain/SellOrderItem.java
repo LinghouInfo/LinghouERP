@@ -3,7 +3,6 @@ package net.linghou.erp.sellorder.domain;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
-import com.sun.xml.internal.xsom.impl.scd.Iterators.Map;
 
 public class SellOrderItem {
 	/** 订单项目Id 自增列 */
@@ -59,7 +58,7 @@ public class SellOrderItem {
 	/** 最终折后价 */
 	private BigDecimal sum;
 	/** 项目利润 */
-	private BigDecimal projectProfit;
+	private BigDecimal itemProfit;
 	private HashSet<Spec> spec;
 
 	@Override
@@ -104,9 +103,6 @@ public class SellOrderItem {
 		this.spec = spec;
 	}
 
-	/** 子项集合 */
-	@SuppressWarnings("rawtypes")
-	private Map orderItems;
 
 	public int getItemId() {
 		return itemId;
@@ -316,20 +312,12 @@ public class SellOrderItem {
 		this.sum = sum;
 	}
 
-	public BigDecimal getProjectProfit() {
-		return projectProfit;
+	public BigDecimal getItemProfit() {
+		return itemProfit;
 	}
 
-	public void setProjectProfit(BigDecimal projectProfit) {
-		this.projectProfit = projectProfit;
-	}
-
-	public Map getOrderItems() {
-		return orderItems;
-	}
-
-	public void setOrderItems(Map orderItems) {
-		this.orderItems = orderItems;
+	public void setItemProfit(BigDecimal itemProfit) {
+		this.itemProfit = itemProfit;
 	}
 
 }
