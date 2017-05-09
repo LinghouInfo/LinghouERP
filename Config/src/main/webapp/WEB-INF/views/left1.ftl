@@ -7,7 +7,9 @@
       <i class="fa fa-chevron-down"></i> 
      </div> 
 	     <ul class="submenu"> 
-	      <li><a href="#">品牌设置</a></li> 
+	      <li>
+	      	<a href="#">品牌设置</a>      
+	      </li> 
 	      <li><a href="#">SPU设置</a></li>
 	      <li><a href="#">店铺设置</a></li>
 	      <li><a href="#">仓库设置</a></li>

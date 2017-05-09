@@ -16,7 +16,7 @@
   <div class="container-fluid"> 
    <div class="row"> 
     <div name="left" class="col-md-1">
-     <#include "left_brand.ftl"/>
+     <#include "left_spu.ftl"/>
     </div> 
     <div name="right" class="col-md-11 "> 
      <div name=""> 
@@ -28,8 +28,8 @@
        </ol> 
        <div> 
         <ul id="tabs"> 
-         <li><a href="#" name="#tab1">查询品牌</a></li> 
-         <li><a href="#" name="#tab2">新建品牌</a></li> 
+         <li><a href="#" name="#tab1">SPU查询</a></li> 
+         <li><a href="#" name="#tab2">新增SPU</a></li> 
          <li><a href="#" name="#tab3">Three</a></li> 
          <li><a href="#" name="#tab4">Four</a></li> 
         </ul> 
@@ -40,7 +40,7 @@
           <form action="/SellOrder/queryBrand" method="post"> 
            <div class="row"> 
             <div class="col-md-2"> 
-             <input placeholder="请输入要搜索的品牌" name="brandName" class="form-control" /> 
+             <input placeholder="请输入要搜索的SPU名称" name="brandName" class="form-control" /> 
             </div>  
             <i class="icon-search"> </i> 
             <button class="btn btn-primary icon-search">搜索</button> 
@@ -100,13 +100,13 @@
           <div class="modal-dialog"> 
            <div class="modal-content"> 
             <div class="modal-header"> 
-             <h3 class="modal-title">新建品牌</h3> 
+             <h3 class="modal-title">新增SPU</h3> 
              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
             </div> 
             <div class="modal-body"> 
-             <input class="form-control" placeholder="请输入品牌名称" />
+             <input class="form-control" placeholder="请输入SPU名称" />
              <br /> 
-             <input class="form-control" placeholder="输入品牌序号(序号越大越靠前)" /> 
+             <input class="form-control" placeholder="输入SPU序号(序号越大越靠前)" /> 
             </div> 
             <div class="modal-footer"> 
              <button type="button" class="btn btn-primary"> 保存 </button> 

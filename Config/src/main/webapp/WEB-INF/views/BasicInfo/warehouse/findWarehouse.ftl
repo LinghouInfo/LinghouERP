@@ -16,7 +16,7 @@
   <div class="container-fluid"> 
    <div class="row"> 
     <div name="left" class="col-md-1">
-     <#include "left_brand.ftl"/>
+     <#include "left_Warehouse.ftl"/>
     </div> 
     <div name="right" class="col-md-11 "> 
      <div name=""> 
@@ -28,8 +28,8 @@
        </ol> 
        <div> 
         <ul id="tabs"> 
-         <li><a href="#" name="#tab1">查询品牌</a></li> 
-         <li><a href="#" name="#tab2">新建品牌</a></li> 
+         <li><a href="#" name="#tab1">物流查询</a></li> 
+         <li><a href="#" name="#tab2">物流新增</a></li> 
          <li><a href="#" name="#tab3">Three</a></li> 
          <li><a href="#" name="#tab4">Four</a></li> 
         </ul> 
@@ -40,7 +40,7 @@
           <form action="/SellOrder/queryBrand" method="post"> 
            <div class="row"> 
             <div class="col-md-2"> 
-             <input placeholder="请输入要搜索的品牌" name="brandName" class="form-control" /> 
+             <input placeholder="请输入搜索的物流名称" name="brandName" class="form-control" /> 
             </div>  
             <i class="icon-search"> </i> 
             <button class="btn btn-primary icon-search">搜索</button> 
@@ -56,7 +56,7 @@
              <thead> 
               <tr> 
                <th>序号</th> 
-               <th>品牌名称</th> 
+               <th>物流名称</th> 
                <th>操作</th> 
               </tr> 
              </thead> 
@@ -100,16 +100,16 @@
           <div class="modal-dialog"> 
            <div class="modal-content"> 
             <div class="modal-header"> 
-             <h3 class="modal-title">新建品牌</h3> 
+             <h3 class="modal-title">物流新增</h3> 
              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
             </div> 
             <div class="modal-body"> 
-             <input class="form-control" placeholder="请输入品牌名称" />
+             <input class="form-control" placeholder="请输入物流名称" />
              <br /> 
-             <input class="form-control" placeholder="输入品牌序号(序号越大越靠前)" /> 
+             <input class="form-control" placeholder="输入物流序号(序号越大越靠前)" /> 
             </div> 
             <div class="modal-footer"> 
-             <button type="button" class="btn btn-primary"> 保存 </button> 
+             <button type="button" class="btn btn-primary">保存 </button> 
              <button type="button" class="btn btn-default" data-dismiss="modal">取消 </button> 
             </div> 
            </div>
