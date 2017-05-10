@@ -75,15 +75,50 @@
            
           </div>
 	       <div class="row">
-	       	  &nbsp;&nbsp;&nbsp; <div id="kkpager"> 
-           		 </div> 
-        
+	       	
+        	 <#include "pager2.ftl" />;
 	          
 	       		</div>
 	           </div>
 			</div>
          </div> 
-         <div id="tab2"> 
+         <div id="tab2" class="col-md-12" style=" background:red;"> 
+         
+         
+<form action="" method="post">
+<div class="modal fade" id="myModal"   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">  
+  <div class="modal-dialog">  
+    <div class="modal-content">  
+      <div class="modal-header">       
+        <h3 class="modal-title">新建品牌</h3>  
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>  
+      </div>  
+      <div class="modal-body">  
+       <input class="form-control"  placeholder="请输入品牌名称"/><br/>
+	<input class="form-control" placeholder="输入品牌序号(序号越大越靠前)"/>
+      </div>  
+      <div class="modal-footer">  
+        <button type="button" class="btn btn-primary">
+					保存
+				</button>
+				<button type="button" class="btn btn-default" 
+						data-dismiss="modal">取消
+				</button>
+      </div>  
+    </div><!-- /.modal-content -->  
+  </div><!-- /.modal-dialog -->  
+</div><!-- /.modal -->  
+</form>
+<script>
+$(function () { $('#myModal').modal({
+	keyboard: true;
+})
+});
+</script>
+         
+         
+         
+         
          </div> 
          <div id="tab3">
            3 
@@ -96,29 +131,8 @@
 
 
         <div class="col-md-4"> 
-         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
-          <div class="modal-dialog"> 
-           <div class="modal-content"> 
-            <div class="modal-header"> 
-             <h3 class="modal-title">新建品牌</h3> 
-             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            </div> 
-            <div class="modal-body"> 
-             <input class="form-control" placeholder="请输入品牌名称" />
-             <br /> 
-             <input class="form-control" placeholder="输入品牌序号(序号越大越靠前)" /> 
-            </div> 
-            <div class="modal-footer"> 
-             <button type="button" class="btn btn-primary"> 保存 </button> 
-             <button type="button" class="btn btn-default" data-dismiss="modal">取消 </button> 
-            </div> 
-           </div>
-           <!-- /.modal-content --> 
-          </div>
-          <!-- /.modal-dialog --> 
-         </div>
-         <!-- /.modal --> 
-        </div>        
+ 
+      
        </div> 
       </main>
      </div>  
