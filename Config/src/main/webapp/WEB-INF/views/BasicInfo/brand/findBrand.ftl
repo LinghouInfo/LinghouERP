@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
- <head> 
+ <head>
+  <title>首页</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <meta http-equiv="x-ua-compatible" content="ie=edge" /> 
-  <title>首页</title>
-  <link rel="stylesheet" type="text/css" href="/Config/css/bootstrap.css" media="screen" /> 
-  <link rel="stylesheet" type="text/css" href="/Config/css/left.css" media="screen" /> 
-  <link rel="shortcut icon" href="/Config//images/favicon.ico" /> 
-  <link rel="stylesheet" type="text/css" media="screen" href="/Config/css/kkpager_orange.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="/Config/css/override.css" /> 
+  
+  <link rel="stylesheet" href="/Config/css/bootstrap/css/bootstrap.min.css" />
+
+  <script type="text/javascript" src="/Config/js/jquery.js"></script>
+  <script type="text/javascript" src="/Config/css/bootstrap/js/bootstrap.js"></script>
+  
  </head> 
  <body>
+ 	
+ 
    <#include "header.ftl" />; 
   <div class="container-fluid"> 
    <div class="row"> 
@@ -26,7 +29,26 @@
         <li><a href="#">2013</a></li> 
         <li class="active">十一月</li> 
        </ol> 
+	   
+	   <div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#tab1">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#tab2">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#tab3">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#tab4">Disabled</a>
+  </li>
+</ul>
+	   </div>
+	   
        <div> 
+
         <ul id="tabs"> 
          <li><a href="#" name="#tab1">查询品牌</a></li> 
          <li><a href="#" name="#tab2">新建品牌</a></li> 
@@ -139,10 +161,5 @@ $(function () { $('#myModal').modal({
     </div> 
    </div> 
   </div> 
-  <script type="text/javascript" src="/Config/js/jquery.js"></script> 
-  <script type="text/javascript" src="/Config/js/kkpager.min.js"></script>
-  <script type="text/javascript" src="/Config/js/bootstrap.js"></script> 
-  <script type="text/javascript" src="/Config/js/left.js"></script>
-  <script type="text/javascript" src="/Config/js/index.js"></script>
  </body>
 </html>
