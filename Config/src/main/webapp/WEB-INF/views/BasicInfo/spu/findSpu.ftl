@@ -55,13 +55,13 @@
              <th>品牌</th> 
              <th>SPU是否多规格</th> 
              <th>市场价格</th> 
-             <th>销量</th> 
-             <th>添加时间</th> 
+             <th>销量</th>         
              <th>产地</th> 
              <th>进货价</th> 
              <th>重量</th> 
              <th>指定物流</th> 
              <th>是否航空禁运</th> 
+             <th>添加时间</th> 
              <th>操作</th> 
             </tr> 
            </thead> 
@@ -73,13 +73,13 @@
              <td>杰妃</td> 
              <td>否</td> 
              <td>未知</td> 
-             <td>未知</td> 
-             <td>2012-01-01</td> 
+             <td>未知</td>            
              <td>河北省...</td> 
              <td>未知</td> 
              <td>未知</td> 
              <td>EMS</td> 
              <td>否</td> 
+             <td>2012-01-01</td> 
              <td> <select id="pid" class="form-control" onchange="operationChange()"> <option selected="selected">选择操作</option> <option operation="delete" value="1">删除该产品信息</option> <option operation="update" value="2">修改该产品信息</option> </select> </td> 
             </tr> 
             <tr> 
@@ -95,6 +95,7 @@
              <td>未知</td> 
              <td>未知</td> 
              <td>顺风</td> 
+             <td>2012-01-01</td> 
              <td>否</td> 
              <td> <select class="form-control" onchange="operationChange()"> <option selected="selected">选择操作</option> <option value="id">删除该产品信息</option> <option value="id">修改该产品信息</option> </select></td> 
             </tr> 
