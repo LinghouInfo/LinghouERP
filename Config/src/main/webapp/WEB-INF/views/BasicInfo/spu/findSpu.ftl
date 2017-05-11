@@ -198,8 +198,8 @@
              </form> 
             </div> 
             <div class="modal-footer" style="text-align:left;"> 
-             <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:4px;">关闭</button> 
-             <button type="button" class="btn btn-primary" id="save">保存</button> 
+             <button type="button" style="margin-left:4px;" class="btn btn-primary" id="save">保存</button> 
+             <button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button> 
              <div> 
              </div> 
 				<script type="text/javascript">  
@@ -300,8 +300,8 @@
              </form> 
             </div> 
             <div class="modal-footer" style="text-align:left;"> 
-             <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:4px;">关闭</button> 
-             <button type="button" class="btn btn-primary" id="save">保存</button> 
+			 <button type="button" class="btn btn-primary" id="save"  style="margin-left:4px;">保存</button>
+             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
              <div> 
              </div> 
 				<script type="text/javascript">  

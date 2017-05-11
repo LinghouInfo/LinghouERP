@@ -14,9 +14,7 @@
   <script type="text/javascript" src="/Config/js/jquery.js"></script> 
   <script type="text/javascript" src="/Config/css/bootstrap/js/bootstrap.js"></script> 
   <script src="/Config/css/bootstrap/js/leftMenu/metismenu.js"></script> 
-  <script src="/Config/css/bootstrap/js/leftMenu/prism.min.js"></script> 
-  
- 
+  <script src="/Config/css/bootstrap/js/leftMenu/prism.min.js"></script>  
  </head> 
  <body> 
   <div class="container-fluid">
@@ -160,8 +158,8 @@
             </div> 
             <div class="modal-footer" style="text-align:left;">
             
-             <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:4px;">关闭</button> 
-             <button type="button" class="btn btn-primary" id="save">保存</button>
+             <button type="button" class="btn btn-primary" id="save"  style="margin-left:4px;">保存</button> 
+             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
              <div>
              
             </div>
@@ -198,18 +196,6 @@
           </div> 
          </div> 
 
-
-
-
-
-
-
-
-
-		 
-
-
-
 	   <div   class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"> 
           <div class="modal-dialog" role="document" style="width:1000px; position:relative; top:40px;" > 
            <div class="modal-content"> 
@@ -235,9 +221,8 @@
 			 
             </div> 
             <div class="modal-footer" style="text-align:left;">
-            
-             <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:4px;">关闭</button> 
-             <button type="button" class="btn btn-primary" id="save">保存</button>
+             <button type="button" class="btn btn-primary" id="save" style="margin-left:4px;">保存</button>
+             <button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button>
              <div>
              
             </div>

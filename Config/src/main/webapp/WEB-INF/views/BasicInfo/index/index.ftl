@@ -46,8 +46,8 @@
           </form> 
          </div> 
          <div class="modal-footer"> 
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
-          <button type="button" class="btn btn-primary" id="save">保存</button> 
+             <button type="button" class="btn btn-primary" id="save" style="margin-left:4px;>保存</button> 
+             <button type="button" class="btn btn-default" data-dismiss="modal" ">关闭</button> 
           <div></div> 
 			<script type="text/javascript">  
             
