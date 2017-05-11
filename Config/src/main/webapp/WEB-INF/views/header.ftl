@@ -1,9 +1,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-<div class="container-fluid">
 
 <div class="row">
   <div class="col-md-1">
-  	<a class="navbar-brand" title="返回首页" href="/SellOrder/index">LingHouErp</a>
+  	<a class="navbar-brand" title="返回首页" href="/Config/index">LingHouErp</a>
   </div>
   <div class="col-md-11">
   
@@ -72,9 +71,7 @@
 			<li><a class="dropdown-item" href="/Config/findWarehouse">物流设置</a></li>
           </ul>
         </li>
-      </ul>
-	 
-	 
+      </ul>	 	 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">xrmeng<span class="caret"></span></a>
@@ -87,7 +84,5 @@
 	  
 	 </div>
   </div>
-</div>
-
 </div>
 </nav>
