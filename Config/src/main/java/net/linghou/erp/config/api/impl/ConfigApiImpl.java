@@ -2,15 +2,67 @@ package net.linghou.erp.config.api.impl;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import net.linghou.erp.config.domain.Brand;
+import net.linghou.erp.config.domain.Message;
 
 @Controller
 @RequestMapping(path = "/")
 public class ConfigApiImpl implements net.linghou.erp.config.api.LocalApi{
 	
+	
+	
+	/**基础模板首页*/
+	@RequestMapping(path = "/index", method = RequestMethod.GET)
+	public Object index(){		
+		return "/BasicInfo/index/index";
+	}
+	@RequestMapping(path = "/", method = RequestMethod.GET)
+	public Object index1(){		
+		return "/BasicInfo/index/index";
+	}
+	
+	
+	
+	
+	
+
+
+
+	
+	/**添加品牌信息*/
+	@ResponseBody
+	@RequestMapping(path = "/addBrand", method = RequestMethod.POST)
+	public Object addBrand(@ModelAttribute("form") Brand brand,@RequestParam("brandName")String brandName,
+			@RequestParam("serialNumber")String serialNumber,
+			RedirectAttributes arrt)
+	{
+			
+
+		System.out.println("序号"+serialNumber+"品牌名称"+brandName);
+		System.out.println("序号2"+brand.getSerialNumber()+"品牌名称"+brand.getBrandName());
+		
+	
+		return Message.添加成功;
+
+	}
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(path = "/findBrand", method = RequestMethod.GET)
 	public Object findBrand(){
+		
 		return "/BasicInfo/brand/findBrand";
 	}
 	
@@ -19,6 +71,18 @@ public class ConfigApiImpl implements net.linghou.erp.config.api.LocalApi{
 		
 		return "/BasicInfo/brand/modifyBrand";
 	}
+	
+
+
+	
+	@RequestMapping(path = "/sortBrand", method = RequestMethod.GET)
+	public Object sortBrand(Model model){
+		
+		return "/BasicInfo/brand/sortBrand";
+	}
+	
+	
+	
 	
 	
 	@RequestMapping(path = "/findShop", method = RequestMethod.GET)
@@ -32,17 +96,17 @@ public class ConfigApiImpl implements net.linghou.erp.config.api.LocalApi{
 		return "/BasicInfo/shop/modifyShop";
 	}	
 		
-	@RequestMapping(path = "/sortShop", method = RequestMethod.GET)
-	public Object sortShop(Model model){
+	@RequestMapping(path = "/sorthop", method = RequestMethod.GET)
+	public Object sorthop(Model model){
 		
-		return "/BasicInfo/shop/sortShop";
+		return "/BasicInfo/shop/sorthop";
 	}	
 	
 	
-	@RequestMapping(path = "/sortSpu", method = RequestMethod.GET)
-	public Object sortSpu(Model model){
+	@RequestMapping(path = "/sortpu", method = RequestMethod.GET)
+	public Object sortpu(Model model){
 		
-		return "/BasicInfo/spu/sortSpu";
+		return "/BasicInfo/spu/sortpu";
 	}
 	
 	
@@ -66,6 +130,12 @@ public class ConfigApiImpl implements net.linghou.erp.config.api.LocalApi{
 	public Object findLogistics(){
 		return "/BasicInfo/logistics/findLogistics";
 	}
+	
+	@RequestMapping(path = "/addLogistics", method = RequestMethod.GET)
+	public Object addLogistics(){
+		return "/BasicInfo/logistics/findLogistics";
+	}
+	
 	
 	@RequestMapping(path = "/modifyLogistics", method = RequestMethod.GET)
 	public Object modifyLogistics(Model model){
