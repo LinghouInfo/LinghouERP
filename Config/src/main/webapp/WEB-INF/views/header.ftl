@@ -74,7 +74,10 @@
       </ul>	 	 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">xrmeng<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-user"></span>
+          xrmeng
+          <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">修改密码</a></li>
             <li><a href="#">注销</a></li>

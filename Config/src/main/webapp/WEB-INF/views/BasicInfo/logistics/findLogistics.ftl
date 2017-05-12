@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
  <head> 
-  <title>品牌设置</title> 
+  <title>仓库设置</title> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <meta http-equiv="x-ua-compatible" content="ie=edge" /> 
+  <link type="image/x-icon" rel="shortcut icon" href="/Config/images/favicon.ico" />
   <link rel="stylesheet" href="/Config/css/bootstrap/css/bootstrap.min.css" /> 
   <link rel="stylesheet" type="text/css" href="/Config/css/bootstrap/css/leftMenu/default.css" /> 
   <script type="text/javascript" src="/Config/js/jquery.js"></script> 
   <script type="text/javascript" src="/Config/css/bootstrap/js/bootstrap.js"></script> 
-
  </head> 
  <body> 
   <div class="container-fluid">
@@ -41,7 +41,7 @@
          <form class="form-inline"> 
           <div class="form-group"> 
            <label class="sr-only" for="brandName">仓库名称</label> 
-           <input placeholder="请输入搜索的仓库名称" onpaste="return false" oncontextmenu="return false" name="brandName" class="form-control" /> 
+           <input placeholder="请输入搜索的仓库名称"   name="brandName" class="form-control" /> 
           </div> 
           <button class="btn btn-primary icon-search">搜索</button> 
          </form> 
@@ -104,15 +104,15 @@
              <form> 
               <div class="form-group"> 
                <label for="recipient-name" class="control-label"></label> 
-               <input id="logisticsId" readonly="readonly" type="text" class="form-control brandName" style="width:400px;" onpaste="return false" oncontextmenu="return false" /> 
+               <input id="logisticsId" readonly="readonly" type="text" class="form-control brandName" style="width:400px;"   /> 
               </div> 
               <div class="form-group"> 
-               <label for="recipient-name" class="control-label"></label> 
-               <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入仓库名称" onpaste="return false" oncontextmenu="return false" /> 
+               <label for="recipient-name" class="control-label">仓库名称</label> 
+               <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入仓库名称"   /> 
               </div> 
               <div class="form-group "> 
-               <label for="message-text" class="control-label"></label> 
-               <input name="serialNumber" class="form-control serialNumber" style="width:400px;" placeholder="请输入仓库序号,序号越大查询越靠前" onpaste="return false" oncontextmenu="return false" /> 
+               <label for="message-text" class="control-label">仓库序号</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;" placeholder="请输入仓库序号,序号越大查询越靠前"   /> 
               </div> 
              </form> 
             </div> 
@@ -163,12 +163,12 @@
             <div class="modal-body"> 
              <form> 
               <div class="form-group"> 
-               <label for="recipient-name" class="control-label"></label> 
-               <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入仓库名称" onpaste="return false" oncontextmenu="return false" /> 
+               <label for="recipient-name" class="control-label">仓库名称:</label> 
+               <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入仓库名称"   /> 
               </div> 
               <div class="form-group "> 
-               <label for="message-text" class="control-label"></label> 
-               <input name="serialNumber" class="form-control serialNumber" style="width:400px;" placeholder="请输入仓库序号,序号越大查询越靠前" onpaste="return false" oncontextmenu="return false" /> 
+               <label for="message-text" class="control-label">仓库序号:</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;" placeholder="请输入仓库序号,序号越大查询越靠前"   /> 
               </div> 
              </form> 
             </div> 

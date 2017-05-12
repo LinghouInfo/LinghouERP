@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head> 
-  <title>物流设置</title> 
+  <title>店铺分类设置</title> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -16,14 +16,14 @@
     <#include "header.ftl" /> 
    <div class="row" style="margin-top:60px;"> 
     <div name="left" class="col-md-1">
-      <#include "left_warehouse.ftl"/>
+      <#include "left_shop.ftl"/>
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
      <main name="right" style=""> 
       <div> 
        <!-- Nav tabs --> 
        <ul class="nav nav-tabs" role="tablist"> 
-        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab">物流查询</a></li> 
+        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab">店铺分类查询</a></li> 
        </ul> 
        <!-- Tab panes --> 
        <div class="tab-content"> 
@@ -38,19 +38,19 @@
          <div name="message">${susses}</div>
          <form class="form-inline"> 
           <div class="form-group"> 
-           <label class="sr-only" for="brandName">物流名称</label> 
-           <input placeholder="请输入搜索的物流名称"    name="brandName" class="form-control" /> 
+           <label class="sr-only" for="brandName">店铺分类名称</label> 
+           <input placeholder="请输入搜索的店铺分类名称"    name="brandName" class="form-control" /> 
           </div> 
           <button class="btn btn-primary icon-search">搜索</button> 
          </form> 
-         <button class="btn btn-primary icon-search" data-toggle="modal" style="position:relative; top:-31px;  left:250px;" data-target="#exampleModal" data-whatever="@fat">新建物流</button> 
+         <button class="btn btn-primary icon-search" data-toggle="modal" style="position:relative; top:-31px;  left:250px;" data-target="#exampleModal" data-whatever="@fat">新建店铺分类</button> 
 			
 		 <div class="row" style="margin-left:0px;background-color:;">
 		 <table class="table">
 			  <thead>
 			    <tr>
-			      <th>物流ID</th>
-			      <th>物流名称</th>
+			      <th>店铺分类ID</th>
+			      <th>店铺分类名称</th>
 			      <th>操作</th>
 			    </tr>
 			  </thead>
@@ -61,8 +61,8 @@
 			        <td>
 					<select id="pid" class="form-control"  onchange="operationChange()">
 						<option selected="selected">选择操作</option>
-					    <option operation="delete" value="1">删除该物流信息</option>
-					    <option operation="update" value="2">修改该物流信息</option>
+					    <option operation="delete" value="1">删除该店铺分类信息</option>
+					    <option operation="update" value="2">修改该店铺分类信息</option>
 					</select>
 					
 					</td>
@@ -74,8 +74,8 @@
 			      <td>
 			    	<select class="form-control"  onchange="operationChange()">
 						<option selected="selected">选择操作</option>
-					    <option operation="delete" value="1">删除该物流信息</option>
-					    <option operation="update" value="2">修改该物流信息</option>
+					    <option operation="delete" value="1">删除该店铺分类信息</option>
+					    <option operation="update" value="2">修改该店铺分类信息</option>
 					</select>
 					</td>
 			      </td>
@@ -123,11 +123,8 @@
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">修改物流信息</h4>
+             <h4 class="modal-title" id="exampleModalLabel">修改店铺分类信息</h4>
             </div> 
-            
-            
-            
             <div class="modal-body"> 
             
              <form> 
@@ -139,13 +136,13 @@
              
              
               <div class="form-group"> 
-               <label for="recipient-name" class="control-label" >物流名称:</label> 
-               <input  name="brandName" type="text" class="form-control brandName"  style="width:400px;" placeholder="请输入物流名称"   />
+               <label for="recipient-name" class="control-label" >店铺分类名称:</label> 
+               <input  name="brandName" type="text" class="form-control brandName"  style="width:400px;" placeholder="请输入店铺分类名称"   />
               </div> 
               
               <div class="form-group "> 
-               <label for="message-text" class="control-label">物流序号:</label> 
-               <input name="serialNumber" class="form-control serialNumber" style="width:300px;"  placeholder="请输入物流序号,序号越大查询越靠前" 
+               <label for="message-text" class="control-label">店铺分类序号:</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;"  placeholder="请输入店铺分类序号,序号越大查询越靠前" 
 			        />
               </div> 
 		    </form> 
@@ -198,18 +195,18 @@
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增物流</h4>
+             <h4 class="modal-title" id="exampleModalLabel">新增店铺分类</h4>
             </div> 
             <div class="modal-body"> 
             
              <form> 
               <div class="form-group"> 
-               <label for="recipient-name" class="control-label" >物流名称:</label> 
-               <input  name="brandName" type="text" class="form-control brandName"  style="width:400px;" placeholder="请输入物流名称"   />
+               <label for="recipient-name" class="control-label" >店铺分类名称:</label> 
+               <input  name="brandName" type="text" class="form-control brandName"  style="width:400px;" placeholder="请输入店铺分类名称"   />
               </div> 
               <div class="form-group "> 
-               <label for="message-text" class="control-label" >物流序号:</label> 
-               <input name="serialNumber" class="form-control serialNumber" style="width:300px;"  placeholder="请输入物流序号,序号越大查询越靠前"  />
+               <label for="message-text" class="control-label" >店铺分类序号:</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;"  placeholder="请输入店铺分类序号,序号越大查询越靠前"  />
               </div> 
 		    </form> 
 			 

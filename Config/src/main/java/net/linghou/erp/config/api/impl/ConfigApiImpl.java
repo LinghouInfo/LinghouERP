@@ -32,10 +32,21 @@ public class ConfigApiImpl implements net.linghou.erp.config.api.LocalApi{
 	
 	
 	
+	/**SPU分类*/
+	@RequestMapping(path = "/sortSpu", method = RequestMethod.GET)
+	public Object sortSpu(){		
+		return "/BasicInfo/spu/sortSpu";
+	}
 	
+	
+	/**店铺分类*/
+	@RequestMapping(path = "/sortShop", method = RequestMethod.GET)
+	public Object sortShop(){		
 
-
-
+		return "/BasicInfo/shop/sortShop";
+	}
+	
+	
 	
 	/**添加品牌信息*/
 	@ResponseBody

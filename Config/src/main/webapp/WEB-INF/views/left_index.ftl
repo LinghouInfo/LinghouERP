@@ -7,15 +7,14 @@
                  <a href="#">品牌设置</a>
                  <ul>
                      <li><a href="/Config/findBrand">品牌查询</a></li>
-                     <li><a href="#" data-toggle="modal" data-target="#exampleModal">品牌新增</a></li>
-                     <li><a href="/Config/brand/sortBrand">品牌分类</a></li>
+                     <li><a href="/Config/findBrand" >品牌新增</a></li>
                  </ul>
              </li>
              <li>
                  <a href="#">SPU设置</span></a>
                  <ul>
                      <li><a href="/Config/findSpu">SPU查询</a></li>
-                     <li><a href="/Config/addSpu">SPU新增</a></li>
+                     <li><a href="/Config/findSpu">SPU新增</a></li>
                      <li><a href="/Config/sortSpu">SPU分类</a></li>
                  </ul>
              </li>
@@ -23,21 +22,21 @@
                  <a href="#">店铺设置</span></a>
                  <ul>
                      <li><a href="/Config/findShop">店铺查询</a></li>
-                     <li><a href="/Config/addShop">店铺新增</a></li>
+                     <li><a href="/Config/findShop">店铺新增</a></li>
                  </ul>
              </li>
              <li>
                  <a href="#">仓库设置</span></a>
                  <ul>
                      <li><a href="/Config/findLogistics">仓库查询</a></li>
-                     <li><a href="/Config/addLogistics">仓库新增</a></li>
+                     <li><a href="/Config/findLogistic">仓库新增</a></li>
                  </ul>
              </li>
              <li>
                  <a href="#">物流设置</span></a>
                  <ul>
                      <li><a href="/Config/findWarehouse">物流查询</a></li>
-                     <li><a href="/Config/addWarehouse">物流新增</a></li>
+                     <li><a href="/Config/findWarehouse">物流新增</a></li>
                  </ul>
              </li>
          </ul>

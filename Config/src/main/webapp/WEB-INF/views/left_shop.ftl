@@ -6,6 +6,7 @@
                  <ul>
                      <li><a href="/Config/findShop">店铺查询</a></li>
                      <li><a href="#"  data-toggle="modal"  data-target="#exampleModal">店铺新增</a></li>
+                     <li><a href="/Config/sortShop" >店铺分类</a></li>
                  </ul>
              </li>
          </ul>

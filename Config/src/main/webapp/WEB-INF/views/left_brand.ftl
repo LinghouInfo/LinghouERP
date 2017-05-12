@@ -6,7 +6,6 @@
                  <ul>
                      <li><a href="/Config/findBrand">品牌查询</a></li>
                      <li><a href="#" data-toggle="modal" data-target="#exampleModal">品牌新增</a></li>
-                     <li><a href="/Config/sortBrand">品牌分类</a></li>
                  </ul>
              </li>
          </ul>

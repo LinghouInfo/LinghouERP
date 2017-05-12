@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
  <head> 
-  <title>首页</title> 
+  <title>品牌设置</title> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1" /> 
   <meta http-equiv="x-ua-compatible" content="ie=edge" /> 
+  <link type="image/x-icon" rel="shortcut icon" href="/Config/images/favicon.ico" />
   <link rel="stylesheet" href="/Config/css/bootstrap/css/bootstrap.min.css" /> 
   <link rel="stylesheet" type="text/css" href="/Config/css/bootstrap/css/leftMenu/default.css" /> 
   <script type="text/javascript" src="/Config/js/jquery.js"></script> 
@@ -103,12 +104,12 @@
                <input id="brandId" readonly="readonly" value="" name="brandId" type="text" class="form-control brandName" style="width:400px;" onpaste="return false" oncontextmenu="return false" /> 
               </div> 
               <div class="form-group"> 
-               <label for="recipient-name" class="control-label"></label> 
+               <label for="recipient-name" class="control-label">品牌名称:</label> 
                <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入品牌名称" onpaste="return false" oncontextmenu="return false" /> 
               </div> 
               <div class="form-group "> 
-               <label for="message-text" class="control-label"></label> 
-               <input name="serialNumber" class="form-control serialNumber" style="width:400px;" placeholder="请输入品牌序号,序号越大查询越靠前" onpaste="return false" oncontextmenu="return false" /> 
+               <label for="message-text" class="control-label">品牌序号:</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;" placeholder="请输入品牌序号,序号越大查询越靠前" onpaste="return false" oncontextmenu="return false" /> 
               </div> 
              </form> 
             </div> 
@@ -161,12 +162,12 @@
             <div class="modal-body"> 
              <form> 
               <div class="form-group"> 
-               <label for="recipient-name" class="control-label"></label> 
+               <label for="recipient-name" class="control-label">品牌名称:</label> 
                <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入品牌名称" onpaste="return false" oncontextmenu="return false" /> 
               </div> 
               <div class="form-group "> 
-               <label for="message-text" class="control-label"></label> 
-               <input name="serialNumber" class="form-control serialNumber" style="width:400px;" placeholder="请输入品牌序号,序号越大查询越靠前" onpaste="return false" oncontextmenu="return false" /> 
+               <label for="message-text" class="control-label">品牌序号:</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;" placeholder="请输入品牌序号,序号越大查询越靠前" onpaste="return false" oncontextmenu="return false" /> 
               </div> 
              </form> 
             </div> 
