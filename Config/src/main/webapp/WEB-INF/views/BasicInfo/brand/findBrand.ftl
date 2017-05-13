@@ -37,7 +37,7 @@
          </table> 
          <div name="message">
            ${susses} 
-         </div> 
+         </div>  
          <form class="form-inline"> 
           <div class="form-group"> 
            <label class="sr-only" for="brandName">品牌名称</label> 

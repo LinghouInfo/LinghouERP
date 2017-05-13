@@ -47,7 +47,7 @@
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建物流</button>
          </form> 
          
-			
+			 
 		 <div class="row" style="margin-left:0px;background-color:;">
 		 <table class="table">
 			  <thead>

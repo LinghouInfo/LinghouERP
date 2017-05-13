@@ -7,7 +7,7 @@
                      <li><a href="/Config/findBrand">品牌查询</a></li>
                      <li><a href="#" data-toggle="modal" data-target="#exampleModal">品牌新增</a></li>
                  </ul>
-             </li>
+              </li>
          </ul>
      </li>
  </ul>

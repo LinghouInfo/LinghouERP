@@ -40,7 +40,7 @@
          </div> 
          
 
-      <div class="panel panel-default">
+      <div class="panel panel-default"> 
 
 		<div id="collapseOne">
 			<div class="panel-body">

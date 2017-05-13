@@ -16,7 +16,7 @@
                      <li style="list-style-type:none;"><a href="/Config/findSpu"><span class="glyphicon glyphicon-search"></span>&nbsp;SPU查询</a></li>
                      <li style="list-style-type:none;"><a href="/Config/findSpu"><span class="glyphicon glyphicon-plus"></span>&nbsp;SPU新增</a></li>
                      <li style="list-style-type:none;"><a href="/Config/sortSpu">SPU分类</a></li>
-                 </ul>
+                 </ul> 
              </li>
              <li>
                  <a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;店铺设置</span></a>

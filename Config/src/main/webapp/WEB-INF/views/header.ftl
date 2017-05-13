@@ -5,7 +5,7 @@
   	<a class="navbar-brand" title="返回首页" href="/Config/index">LingHouErp</a>
   </div>
   <div class="col-md-11">
-  
+   
   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
 	 
       <ul class="nav navbar-nav">

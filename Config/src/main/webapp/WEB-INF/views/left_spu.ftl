@@ -8,7 +8,7 @@
                      <li><a href="#" data-toggle="modal"  data-target="#exampleModal">SPU新增</a></li>
                      <li><a href="/Config/sortSpu">SPU分类</a></li>
                  </ul>
-             </li>
+             </li> 
          </ul>
      </li>
  </ul>

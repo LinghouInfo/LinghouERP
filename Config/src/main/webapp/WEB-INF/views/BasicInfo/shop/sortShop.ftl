@@ -34,7 +34,7 @@
             <td>&nbsp;</td> 
            </tr> 
           </tbody>
-         </table> 
+         </table>  
          <div name="message">${susses}</div>
          <form class="form-inline"> 
           <div class="form-group"> 

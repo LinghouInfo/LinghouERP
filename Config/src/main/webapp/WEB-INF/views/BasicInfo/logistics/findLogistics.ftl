@@ -35,7 +35,7 @@
            </tr> 
           </tbody> 
          </table> 
-         <div name="message">
+         <div name="message"> 
           ${susses}
          </div> 
          <form class="form-inline"> 

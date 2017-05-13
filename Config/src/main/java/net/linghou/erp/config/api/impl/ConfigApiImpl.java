@@ -22,8 +22,8 @@ public class ConfigApiImpl implements net.linghou.erp.config.api.LocalApi{
 	/**基础模板首页*/
 	@RequestMapping(path = "/index", method = RequestMethod.GET)
 	public Object index(){
-		return "demo";
-		//return "/BasicInfo/index/index";
+	
+		return "/BasicInfo/index/index";
 	}
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public Object index1(){		

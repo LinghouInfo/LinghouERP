@@ -82,7 +82,7 @@
 				    
 				
 				              var saveDataAry=[];    
-				            
+				             
 				              var brandName = $(".brandName").val().trim();  
 				               
 				              var serialNumber=$(".serialNumber").val().trim();  
