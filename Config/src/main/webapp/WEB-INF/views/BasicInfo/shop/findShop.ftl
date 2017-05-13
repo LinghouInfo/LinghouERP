@@ -43,9 +43,12 @@
            <label class="sr-only" for="brandName">店铺名称</label> 
            <input placeholder="请输入搜索的店铺名称"  name="brandName" class="form-control" /> 
           </div> 
-          <button class="btn btn-primary icon-search">搜索</button> 
+            <button type="button" class="btn btn-primary">
+				          <span class="glyphicon glyphicon-search"></span> 搜索
+			</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建店铺</button>
          </form> 
-         <button class="btn btn-primary icon-search" data-toggle="modal" style="position:relative; top:-31px;  left:250px;" data-target="#exampleModal" data-whatever="@fat">新建店铺</button> 
+   
          <div class="row" style="margin-left:0px;background-color:;"> 
           <table class="table"> 
            <thead> 

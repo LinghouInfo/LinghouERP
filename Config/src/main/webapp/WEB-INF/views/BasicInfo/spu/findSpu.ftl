@@ -47,26 +47,11 @@
 					<form class=""> 
 						
 			           <input placeholder="请输入搜索的SPU名称"   name="brandName" class="form-control" />        
-				      <div class="btn-group" role="group" aria-label="...">
-						  <select class="form-control">
-						  	<option selected="selected" >价格</option>
-						  	<option>市场价从高到低</option>
-						  	<option>市场价从低到高</option>
-						  	<option>进货价从高到低</option>
-						  	<option>进货价从低到高</option>
-						  </select>
-						  <select class="form-control">
-						  	<option selected="selected" >销量</option>
-						  	<option>销量从高到低</option>
-						  	<option>销量从低到高</option>
-						  </select>
-						   
-				     </div>
 				      <button type="button" class="btn btn-primary">
 				          <span class="glyphicon glyphicon-search"></span> 搜索
 				       </button>
 				       
-				         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">新建SPU</button>
+				         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建SPU</button>
 				         </form>
 				         
 				     

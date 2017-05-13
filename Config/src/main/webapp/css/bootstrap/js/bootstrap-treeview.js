@@ -19,10 +19,13 @@
 
 ;(function ($, window, document, undefined) {
 
+
+
+
+	
 	/*global jQuery, console*/
 
 	'use strict';
-
 	var pluginName = 'treeview';
 
 	var _default = {};
@@ -45,13 +48,12 @@
 		backColor: undefined, // '#FFFFFF',
 		borderColor: undefined, // '#dddddd',
 		onhoverColor: '#F5F5F5',
-		selectedColor: '#FFFFFF',
-		selectedBackColor: '#428bca',
+
 		searchResultColor: '#D9534F',
 		searchResultBackColor: undefined, //'#FFFFFF',
 
 		enableLinks: false,
-		highlightSelected: true,
+		highlightSelected: false,
 		highlightSearchResults: true,
 		showBorder: true,
 		showIcon: true,
@@ -60,7 +62,7 @@
 		multiSelect: false,
 
 		// Event handlers
-		onNodeChecked: undefined,
+	/*	onNodeChecked: undefined,
 		onNodeCollapsed: undefined,
 		onNodeDisabled: undefined,
 		onNodeEnabled: undefined,
@@ -70,18 +72,14 @@
 		onNodeUnselected: undefined,
 		onSearchComplete: undefined,
 		onSearchCleared: undefined
+		*/
 	};
-
+/*
 	_default.options = {
-		silent: false,
+		silent: true,
 		ignoreChildren: false
-	};
+	};*/
 
-	_default.searchOptions = {
-		ignoreCase: true,
-		exactMatch: false,
-		revealResults: true
-	};
 
 	var Tree = function (element, options) {
 
@@ -588,12 +586,27 @@
 					.append($(_this.template.link)
 						.attr('href', node.href)
 						.append(node.text)
+						
 					);
 			}
 			else {
-				// otherwise just text
+			
+				String.prototype.format=function()  
+			 	{  
+			 	  if(arguments.length==0) return this;  
+			 	  for(var s=this, i=0; i<arguments.length; i++)  
+			 	    s=s.replace(new RegExp("\\{"+i+"\\}","g"), arguments[i]);  
+			 	  return s;  
+			 	};  
+				var  $select=("&nbsp;&nbsp;<select class='form-control' id=\"{0}\"").format(this.href);
+				var $onchange=(" onchange='operationChange({0},").format(this.value);	
+				var $onchange1="\"{0}\");'".format(this.href);
+				var $end=(" style='width:120px; font-size:13px;'><option selected='selected'>选择操作</option><option  operation='addNode'>新增子节点</option><option operation='deleteNode'>删除该节点</option><option operation='updateNode' >修改该节点</option></select>");
+				var $end1=$select+$onchange+$onchange1+$end;
+				//alert($end1);
+
 				treeItem
-					.append(node.text);
+					.append(node.text+$end1);
 			}
 
 			// Add tags as badges
@@ -616,6 +629,8 @@
 		});
 	};
 
+
+	
 	// Define any node level style override for
 	// 1. selectedNode
 	// 2. node|data assigned color overrides
@@ -691,7 +706,7 @@
 		item: '<li class="list-group-item"></li>',
 		indent: '<span class="indent"></span>',
 		icon: '<span class="icon"></span>',
-		link: '<a href="#" style="color:inherit;"></a>',
+		link: '<a href="#" style="color:red;"></a>',
 		badge: '<span class="badge"></span>'
 	};
 
