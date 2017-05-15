@@ -19,7 +19,6 @@
       <#include "left_shop.ftl"/>
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
-     <main name="right" style=""> 
       <div> 
        <!-- Nav tabs --> 
        <ul class="nav nav-tabs" role="tablist"> 
@@ -38,17 +37,18 @@
          <div name="message">${susses}</div>
          <form class="form-inline"> 
           <div class="form-group"> 
-           <label class="sr-only" for="brandName">店铺分类名称</label> 
+           <label class="sr-only" for="brandName" style="font-weight:bold;">店铺分类名称</label> 
            <input placeholder="请输入搜索的店铺分类名称"    name="brandName" class="form-control" /> 
           </div> 
             <button type="button" class="btn btn-primary">
 				          <span class="glyphicon glyphicon-search"></span> 搜索
 			 </button> 
-			 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建店铺分类</button>
+			 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span> 新建店铺分类</button>
          </form> 
          
 			
 		 <div class="row" style="margin-left:0px;background-color:;">
+		
 		 <table class="table">
 			  <thead>
 			    <tr>
@@ -113,7 +113,67 @@
 	       }          
 		</script>
 		
-		
+		 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"> 
+          <div class="modal-dialog" role="document" style="width:1000px; position:relative; top:40px;"> 
+           <div class="modal-content"> 
+            <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">新增店铺</h4> 
+            </div> 
+            <div class="modal-body"> 
+             <form> 
+              <div class="form-group"> 
+               <label for="recipient-name" class="control-label">店铺名称:</label> 
+               <input name="brandName" type="text" class="form-control brandName" style="width:400px;" placeholder="请输入店铺名称"  /> 
+                <label for="recipient-name" class="control-label">店铺分类:</label>
+                <select class="form-control">
+                	<option selected="selected">请选择</option>
+                	<option>实体店铺</option>
+                </select> 
+              </div> 
+              <div class="form-group "> 
+               <label for="message-text" class="control-label">店铺序号:</label> 
+               <input name="serialNumber" class="form-control serialNumber" style="width:300px;" placeholder="请输入店铺序号,序号越大查询越靠前"  /> 
+              </div> 
+             </form> 
+            </div> 
+            <div class="modal-footer" style="text-align:left;"> 
+			 <button type="button" class="btn btn-primary" id="save" style="margin-left:4px;">保存</button>
+             <button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button>
+             <div> 
+             </div> 
+				<script type="text/javascript">  
+
+					$("#save").click(function(){  
+					
+							alert("dada");
+							  var saveDataAry=[];    
+							
+							  var brandName = $(".brandName").val().trim();  
+							   
+							  var serialNumber=$(".serialNumber").val().trim();  
+						   
+							  var data1={brandName:brandName,serialNumber:serialNumber};  
+					   
+							  $.ajax({  
+								  url:"${pageContext.request.contextPath}/Config/addBrand",  
+								  type:"post",  
+								  dataType:"json",     
+								  data:data1,  
+								  success:function(result){  
+									alert(result);
+								  },  
+								  error:function(){  
+									  alert("发生异常，请重试！");  
+									}  
+							   });  
+							  
+						});
+				</script> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
 		
       
 		 
@@ -126,7 +186,7 @@
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">修改店铺分类信息</h4>
+             <h4 class="modal-title" id="exampleModalLabel"  style="font-weight:blod;">修改店铺分类信息</h4>
             </div> 
             <div class="modal-body"> 
             
@@ -191,14 +251,14 @@
           </div> 
          </div> 
 
-	   <div   class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"> 
+	   <div   class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"> 
           <div class="modal-dialog" role="document" style="width:1000px; position:relative; top:40px;" > 
            <div class="modal-content"> 
 		   
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增店铺分类</h4>
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">新增店铺分类</h4>
             </div> 
             <div class="modal-body"> 
             
@@ -256,7 +316,6 @@
         </div>
        </div> 
       </div> 
-     </main>  
     </div>
    </div>
   </div>

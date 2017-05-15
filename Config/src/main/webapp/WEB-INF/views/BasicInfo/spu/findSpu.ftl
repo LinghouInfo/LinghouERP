@@ -10,6 +10,9 @@
   <link rel="stylesheet" type="text/css" href="/Config/css/bootstrap/css/leftMenu/default.css" /> 
   <script type="text/javascript" src="/Config/js/jquery.js"></script> 
   <script type="text/javascript" src="/Config/css/bootstrap/js/bootstrap.js"></script> 
+  <style>
+  
+  </style>
  </head> 
  <body> 
   <div class="container-fluid">
@@ -19,11 +22,11 @@
       <#include "left_spu.ftl"> 
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
-     <main name="right" style=""> 
+ 
       <div> 
        <!-- Nav tabs --> 
        <ul class="nav nav-tabs" role="tablist"> 
-        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab">SPU查询</a></li> 
+        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="font-weight:bold;">SPU查询</a></li> 
        </ul> 
        <!-- Tab panes --> 
        <div class="tab-content"> 
@@ -51,7 +54,7 @@
 				          <span class="glyphicon glyphicon-search"></span> 搜索
 				       </button>
 				       
-				         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建SPU</button>
+				         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span> 新建SPU</button>
 				         </form>
 				         
 				     
@@ -69,25 +72,25 @@
 		
 		<div id="collapseTwo" >
 			<div class="panel-body">
-				<input type="checkbox" onclick="columnOnclick(this,'spuCode');" value="1" class="form-control" style="height:12px;"/>
+				<input type="checkbox" checked="checked"  onclick="columnOnclick(this,'spuCode');" value="1" class="form-control" style="height:12px;"/>
 	       		产品编号
-	       		<input type="checkbox" onclick="columnOnclick(this,'spuName');" value="1" class="form-control" style="height:12px;"/>
+	       		<input type="checkbox" checked="checked" onclick="columnOnclick(this,'spuName');" value="1" class="form-control" style="height:12px;"/>
 	       		产品名称
-	       		<input type="checkbox" onclick="columnOnclick(this,'spuSpec');" value="1" class="form-control" style="height:12px;"/>
+	       		<input type="checkbox" checked="checked"  onclick="columnOnclick(this,'spuSpec');" value="1" class="form-control" style="height:12px;"/>
 	       		是否多规格
 	       		
 	       		
-	       		<input type="checkbox" onclick="columnOnclick(this,'createTime');"  value="1" class="form-control" style="height:12px;"/>
+	       		<input type="checkbox"  checked="checked"  onclick="columnOnclick(this,'createTime');"  value="1" class="form-control" style="height:12px;"/>
 	       		添加时间
 	 
 	       		
-	       		<input type="checkbox" onclick="columnOnclick(this,'spuOrigin');" value="1" class="form-control" style="height:12px;"/>
+	       		<input type="checkbox" checked="checked"  onclick="columnOnclick(this,'spuOrigin');" value="1" class="form-control" style="height:12px;"/>
 	       		产地		
 	       		
-	       		<input type="checkbox" onclick="columnOnclick(this,'designatedLogistics');" value="1" class="form-control" style="height:12px;"/>
+	       		<input type="checkbox" checked="checked"  onclick="columnOnclick(this,'designatedLogistics');" value="1" class="form-control" style="height:12px;"/>
 	       		物流
 	       		
-	       		<input type="checkbox" onclick="columnOnclick(this,'aviationEmbargo');" value="1" class="form-control" style="height:12px;"/>
+	       		<input type="checkbox"  checked="checked" onclick="columnOnclick(this,'aviationEmbargo');" value="1" class="form-control" style="height:12px;"/>
 	       		航空禁运
 
 			</div>
@@ -110,52 +113,50 @@
 	</div>
 	
 		   
-           <br/><br/>
-          <table class="table"> 
+           <br/>
+          <table class="table" style="text-align:center" > 
            <thead> 
             <tr> 
-             <th name="spuCode" style="display:none">产品编号</th>
+             <th name="spuCode" >产品编号</th>
              <th>产品简称</th>  
-             <th name="spuName" style="display:none">产品名称</th> 
+             <th name="spuName">产品名称</th> 
              <th>类型</th> 
              <th>品牌</th> 
-             <th name="spuSpec" style="display:none">SPU是否多规格</th> 
+             <th name="spuSpec">多规格</th> 
              <th>市场价格</th>    
              <th>进货价</th> 
              <th name="weight" >重量</th> 
 
-             <th name="designatedLogistics" style="display:none">指定物流</th>
+             <th name="designatedLogistics">指定物流</th>
              <th>&nbsp;</th> 
-             <th name="aviationEmbargo" style="display:none">是否航空禁运</th> 
+             <th name="aviationEmbargo">航空禁运</th> 
              <th>销量</th>
-             <th name="spuOrigin" style="display:none">产地</th>
+             <th name="spuOrigin">产地</th>
              <th>&nbsp;</th>
-             <th name="createTime" style="display:none">添加时间</th>           
+             <th name="createTime" >添加时间</th>           
              <th>操作</th> 
             </tr> 
            </thead> 
            <tbody> 
             <tr> 
-             <td name="spuCode" style="display:none">HP201704050004</td> 
+             <td name="spuCode" >HP201704050004</td> 
              <td>杰妃鱼胶原蛋白肽</td>
-             <td name="spuName" style="display:none">杰妃鱼胶原蛋白肽 3克*7条 （1盒）</td> 
+             <td name="spuName" >杰妃鱼胶原蛋白肽 3克*7条 （1盒）</td> 
              <td>标准产品</td> 
              <td>杰妃</td> 
-             <td name="spuSpec" style="display:none">否</td> 
+             <td name="spuSpec">否</td> 
              <td>1200</td> 
-          
              <td>11</td> 
-             <td name="weight" >11kg</td> 
-    
-             <td name="designatedLogistics" style="display:none">EMS</td> 
+             <td name="weight" >11kg</td>  
+             <td name="designatedLogistics">EMS</td> 
              <td>&nbsp;</td> 
-             <td name="aviationEmbargo" style="display:none">否</td> 
+             <td name="aviationEmbargo">否</td> 
              <td>1200</td> 
-              <td name="spuOrigin" style="display:none">河北省...</td>  
+              <td name="spuOrigin">河北省...</td>  
               <td>&nbsp;</td>
-             <td name="createTime" style="display:none">2012-01-01</td> 
+             <td name="createTime">2012-01-01</td> 
              <td> <select id="pid" class="form-control" onchange="operationChange()"> 
-             <option selected="selected">选择操作</option> 
+             <option selected="selected">操作</option> 
              <option operation="delete" value="1">删除该产品信息</option> 
              <option operation="update" value="2">修改该产品信息</option> 
              <option operation="detailedInformation">查看该产品详细信息</option>
@@ -164,24 +165,24 @@
               </td> 
             </tr> 
             <tr> 
-             <td name="spuCode" style="display:none">HP201704050004</td>
+             <td name="spuCode" >HP201704050004</td>
              <td>杰妃鱼胶原蛋白肽</td>
-             <td name="spuName" style="display:none">杰妃鱼胶原蛋白肽 4克*8条 （2盒）</td> 
+             <td name="spuName" >杰妃鱼胶原蛋白肽 4克*8条 （2盒）</td> 
              <td>标准产品</td> 
              <td>杰妃</td> 
-             <td name="spuSpec" style="display:none">否</td> 
+             <td name="spuSpec">否</td> 
              <td>1100</td> 
              <td>1100</td> 
              <td name="weight">12kg</td> 
-             <td name="designatedLogistics" style="display:none">顺丰快递</td> 
+             <td name="designatedLogistics">顺丰快递</td> 
              <th>&nbsp;</th> 
-             <td name="aviationEmbargo" style="display:none">否</td>
+             <td name="aviationEmbargo">否</td>
              <td>1200</td>  
-             <td name="spuOrigin" style="display:none">唐山</td> 
+             <td name="spuOrigin">唐山</td> 
              <td>&nbsp;</td>
-             <td name="createTime" style="display:none">2012-01-01</td> 
+             <td name="createTime">2012-01-01</td> 
              <td> <select class="form-control" onchange="operationChange()">
-              <option selected="selected">选择操作</option> 
+              <option selected="selected">操作</option> 
              <option operation="delete">删除该产品信息</option> 
              <option operation="update">修改该产品信息</option>
              <option operation="detailedInformation">查看该产品详细信息</option>  
@@ -191,7 +192,7 @@
            </tbody> 
           </table> 
          </div> 
-         <div class="row" style="margin-left:300px;">
+         <div class="row">
            <#include "pager.ftl"> 
          </div> 
          <script>
@@ -224,7 +225,7 @@
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">修改SPU</h4> 
+             <h4 class="modal-title" id="exampleModalLabel"  style="font-weight:bold;">修改SPU</h4> 
             </div> 
             <div class="modal-body"> 
              <form> 
@@ -242,12 +243,12 @@
               <div class="form-group"> 
                <label for="recipient-name" class="control-label">产品编号:</label>     
                <input name="spuCode" type="text" class="form-control brandName" style="width:150px;" placeholder="请输入产品编号"   /> 
-                &nbsp;&nbsp; <label for="recipient-name" class="control-label">选择品牌:</label> <select class="form-control" style="width:150px;"> <option selected="selected">请选择</option> <option>EMS</option> <option>顺风快递</option> <option>4</option> <option>5</option> </select> 
+                 <label for="recipient-name" class="control-label">选择品牌:</label> <select class="form-control" style="width:150px;"> <option selected="selected">请选择</option> <option>EMS</option> <option>顺风快递</option> <option>4</option> <option>5</option> </select> 
               </div> 
               <div class="form-group "> 
              <label for="message-text" class="control-label">产品名称:</label> 
                <input name="spuName" class="form-control serialNumber" style="width:395px;" placeholder="请输入产品名称" /> 
-                 &nbsp;&nbsp;
+             
                <label for="message-text" class="control-label">产品简称:</label> 
                <input name="spuName" class="form-control serialNumber" style="width:150px;" placeholder="请输入产品简称" />
               </div> 
@@ -255,7 +256,6 @@
 			  <div class="form-group "> 
                <label for="message-text" class="control-label">产品产地:</label> 
                <input name="" class="form-control serialNumber" style="width:395px;" placeholder="请输入产地"  />
-                                  &nbsp;&nbsp;
                   <input type="checkbox"   value="1" class="form-control" style="height:12px; " /> 
                   <label class="form-label">是否多规格</label>     
               </div> 	
@@ -267,7 +267,8 @@
           
            		
 				<label for="message-text " class="control-label">市场价格:</label> 
-				 <input name=""class="form-control serialNumber" style="width:80px; text-align:right;" placeholder="$              "  />
+				 <span class="glyphicon glyphicon-jpy"></span>
+				 <input name=""class="form-control serialNumber" style="width:80px; text-align:right;"/>
 				 <label for="message-text " class="control-label">元</label> 
 					
 			
@@ -276,7 +277,8 @@
  
            <div class="form-group"> 
      		  <label for="message-text" class="control-label">进货价格:</label> 
-        		 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" placeholder="$              "  />
+     		  		<span class="glyphicon glyphicon-jpy"></span>
+        		 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;"  />
 				 <label for="message-text " class="control-label">元</label> 
         	</div>
         
@@ -285,7 +287,6 @@
                <select class="form-control" style="width:150px;" > 
                <option selected="selected">请选择</option> 
                <option>EMS</option> <option>顺丰快递</option> <option>圆通快递</option> <option>5</option> </select> 
-                   &nbsp;&nbsp; 
                   <input type="checkbox"   value="1" class="form-control" style="height:12px; " /> 
                   <label class="form-label">是否航空禁运</label>     
               </div> 
@@ -337,7 +338,7 @@
            <div class="modal-content"> 
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增SPU</h4> 
+             <h4 class="modal-title" id="exampleModalLabel"  style="font-weight:bold;">新增SPU</h4> 
             </div> 
             <div class="modal-body"> 
              <form> 
@@ -349,20 +350,19 @@
               <div class="form-group"> 
                <label for="recipient-name" class="control-label">产品编号:</label>     
                <input name="spuCode" type="text" class="form-control brandName" style="width:150px;" placeholder="请输入产品编号"   /> 
-                &nbsp;&nbsp; <label for="recipient-name" class="control-label">选择品牌:</label> <select class="form-control" style="width:150px;"> <option selected="selected">请选择</option> <option>EMS</option> <option>顺风快递</option> <option>4</option> <option>5</option> </select> 
+                <label for="recipient-name" class="control-label">选择品牌:</label> <select class="form-control" style="width:150px;"> <option selected="selected">请选择</option> <option>EMS</option> <option>顺风快递</option> <option>4</option> <option>5</option> </select> 
               </div> 
               <div class="form-group "> 
              <label for="message-text" class="control-label">产品名称:</label> 
                <input name="spuName" class="form-control serialNumber" style="width:395px;" placeholder="请输入产品名称" /> 
-                 &nbsp;&nbsp;
+             
                <label for="message-text" class="control-label">产品简称:</label> 
                <input name="spuName" class="form-control serialNumber" style="width:150px;" placeholder="请输入产品简称" />
               </div> 
              
 			  <div class="form-group "> 
                <label for="message-text" class="control-label">产品产地:</label> 
-               <input name="" class="form-control serialNumber" style="width:395px;" placeholder="请输入产地"  />
-                                  &nbsp;&nbsp;
+               <input name="" class="form-control serialNumber" style="width:395px;" placeholder="请输入产地"  />      
                   <input type="checkbox"   value="1" class="form-control" style="height:12px; " /> 
                   <label class="form-label">是否多规格</label>     
               </div> 	
@@ -374,7 +374,8 @@
           
            		
 				<label for="message-text " class="control-label">市场价格:</label> 
-				 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" placeholder="$              "  />
+				<span class="glyphicon glyphicon-jpy"></span>
+				 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" />
 				 <label for="message-text " class="control-label">元</label> 
 					
 			
@@ -383,14 +384,14 @@
  
            <div class="form-group"> 
      		  <label for="message-text" class="control-label">进货价格:</label> 
-        		 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" placeholder="$              "  />
+     		     <span class="glyphicon glyphicon-jpy"></span>
+        		 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;"/>
 				 <label for="message-text " class="control-label">元</label> 
         	</div>
         
                 <div class="form-group "> 
                <label for="message-text" class="control-label" >指定物流:</label> 
                <select class="form-control" style="width:150px;" > <option selected="selected">请选择</option> <option>EMS</option> <option>顺丰快递</option> <option>圆通快递</option> <option>5</option> </select> 
-                   &nbsp;&nbsp; 
                   <input type="checkbox"   value="1" class="form-control" style="height:12px; " /> 
                   <label class="form-label">是否航空禁运</label>     
               </div> 
@@ -441,7 +442,7 @@
            <div class="modal-content"> 
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">查看详情</h4> 
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">查看详情</h4> 
             </div> 
             <div class="modal-body"> 
              <form> 
@@ -453,12 +454,12 @@
               <div class="form-group"> 
                <label for="recipient-name" class="control-label">产品编号:</label>     
                <input name="spuCode" type="text" class="form-control brandName" style="width:150px;" placeholder="请输入产品编号"   /> 
-                &nbsp;&nbsp; <label for="recipient-name" class="control-label">选择品牌:</label> <select class="form-control" style="width:150px;"> <option selected="selected">请选择</option> <option>EMS</option> <option>顺风快递</option> <option>4</option> <option>5</option> </select> 
+                 <label for="recipient-name" class="control-label">选择品牌:</label> <select class="form-control" style="width:150px;"> <option selected="selected">请选择</option> <option>EMS</option> <option>顺风快递</option> <option>4</option> <option>5</option> </select> 
               </div> 
               <div class="form-group "> 
              <label for="message-text" class="control-label">产品名称:</label> 
                <input name="spuName" class="form-control serialNumber" style="width:395px;" placeholder="请输入产品名称" /> 
-                 &nbsp;&nbsp;
+              
                <label for="message-text" class="control-label">产品简称:</label> 
                <input name="spuName" class="form-control serialNumber" style="width:150px;" placeholder="请输入产品简称" />
               </div> 
@@ -466,7 +467,7 @@
 			  <div class="form-group "> 
                <label for="message-text" class="control-label">产品产地:</label> 
                <input name="" class="form-control serialNumber" style="width:395px;" placeholder="请输入产地"  />
-                                  &nbsp;&nbsp;
+                             
                   <input type="checkbox"   value="1" class="form-control" style="height:12px; " /> 
                   <label class="form-label">是否多规格</label>     
               </div> 	
@@ -478,7 +479,8 @@
           
            		
 				<label for="message-text " class="control-label">市场价格:</label> 
-				 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" placeholder="$              "  />
+				<span class="glyphicon glyphicon-jpy"></span>
+				 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" />
 				 <label for="message-text " class="control-label">元</label> 
 					
 			
@@ -487,14 +489,15 @@
  
            <div class="form-group"> 
      		  <label for="message-text" class="control-label">进货价格:</label> 
-        		 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;" placeholder="$              "  />
+     		  	<span class="glyphicon glyphicon-jpy"></span>
+        		 <input name="" class="form-control serialNumber" style="width:80px; text-align:right;"/>
 				 <label for="message-text " class="control-label">元</label> 
         	</div>
         
                 <div class="form-group "> 
                <label for="message-text" class="control-label" >指定物流:</label> 
                <select class="form-control" style="width:150px;" > <option selected="selected">请选择</option> <option>EMS</option> <option>顺丰快递</option> <option>圆通快递</option> <option>5</option> </select> 
-                   &nbsp;&nbsp; 
+                   
                   <input type="checkbox"   value="1" class="form-control" style="height:12px; " /> 
                   <label class="form-label">是否航空禁运</label>     
               </div> 
@@ -542,7 +545,7 @@
         </div> 
        </div> 
       </div> 
-     </main> 
+ 
     </div> 
    </div> 
   </div>  

@@ -19,11 +19,10 @@
       <#include "left_warehouse.ftl"/>
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
-     <main name="right" style=""> 
       <div> 
        <!-- Nav tabs --> 
        <ul class="nav nav-tabs" role="tablist"> 
-        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab">物流查询</a></li> 
+        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="font-weight:bold;">物流查询</a></li> 
        </ul> 
        <!-- Tab panes --> 
        <div class="tab-content"> 
@@ -36,6 +35,8 @@
           </tbody>
          </table> 
          <div name="message">${susses}</div>
+            <div class="panel panel-default"> 
+         	 <div class="panel-body">
          <form class="form-inline"> 
           <div class="form-group"> 
            <label class="sr-only" for="brandName">物流名称</label> 
@@ -44,11 +45,13 @@
            <button type="button" class="btn btn-primary">
 				          <span class="glyphicon glyphicon-search"></span> 搜索
 			</button>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建物流</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span> 新建物流</button>
          </form> 
-         
+         </div>
+         </div>
 			 
 		 <div class="row" style="margin-left:0px;background-color:;">
+		   <br/>
 		 <table class="table">
 			  <thead>
 			    <tr>
@@ -126,7 +129,7 @@
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">修改物流信息</h4>
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">修改物流信息</h4>
             </div> 
             
             
@@ -136,7 +139,7 @@
              <form> 
              
              <div class="form-group"> 
-               <label for="recipient-name" class="control-label" ></label> 
+               <label for="recipient-name" class="control-label" >物流ID:</label> 
                <input id="warehoudeId" readonly="readonly"  value=" type="text" class="form-control brandName"  style="width:400px;"  />
               </div> 
              
@@ -201,7 +204,7 @@
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增物流</h4>
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">新增物流</h4>
             </div> 
             <div class="modal-body"> 
             
@@ -259,7 +262,6 @@
         </div>
        </div> 
       </div> 
-     </main>  
     </div>
    </div>
   </div>

@@ -23,6 +23,7 @@
 	  display:none; 
       background:url();
 	} 
+	a:visited {color:#2fa0ec}
   </style> 
  </head> 
  <body> 
@@ -36,7 +37,6 @@
       </div> 
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
-     <main name="right" style=""> 
       <div> 
        <!-- Nav tabs --> 
        <ul class="nav nav-tabs" role="tablist"> 
@@ -49,19 +49,19 @@
            
            
            <br/>
-           <div class="col-md-3" style="background-color:;">   
+           <div class="col-md-3"  style="background-color:;">   
          
          
-         <div style="position: fixed; top: 100;opacity:0.75;">
+         <div style="position: fixed;  top: 100;opacity:0.75;">
           <div class="form-group">
           
             <input  class="form-control"  value="">
 
              <button type="button" class="btn btn-primary" style="position:relative;top:-1px;">
-				    <span class="glyphicon glyphicon-search"></span>&nbsp;查询分类
+				    <span class="glyphicon glyphicon-search"></span> 查询分类
 		     </button>
 		     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" data-whatever="@fat"    style="position:relative;top:-1px;">
-				    <span class="glyphicon glyphicon-plus"></span>&nbsp;新增节点
+				    <span class="glyphicon glyphicon-plus"></span> 新增一级节点
 		     </button>
 		  
             
@@ -73,7 +73,8 @@
         </div>
 
            <div class="col-md-3">
-           <div id="treeview12" class=""> </div>
+           <div style="position:relative;left:30px;" id="treeview12" class=""> </div>
+           
            
 		</div>
          
@@ -370,7 +371,7 @@
 		   
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增节点</h4>
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">新增一级节点</h4>
             </div> 
             <div class="modal-body"> 
             

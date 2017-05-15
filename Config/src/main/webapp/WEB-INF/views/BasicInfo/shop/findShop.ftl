@@ -19,11 +19,11 @@
       <#include "left_shop.ftl"/> 
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
-     <main name="right" style=""> 
+
       <div> 
        <!-- Nav tabs --> 
        <ul class="nav nav-tabs" role="tablist"> 
-        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab">店铺查询</a></li> 
+        <li role="presentation" class="active"> <a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="font-weight:bold;">店铺查询</a></li> 
        </ul> 
        <!-- Tab panes --> 
        <div class="tab-content"> 
@@ -38,6 +38,8 @@
          <div name="message">
           ${susses}
          </div>  
+            <div class="panel panel-default"> 
+         	 <div class="panel-body">
          <form class="form-inline"> 
           <div class="form-group"> 
            <label class="sr-only" for="brandName">店铺名称</label> 
@@ -46,10 +48,12 @@
             <button type="button" class="btn btn-primary">
 				          <span class="glyphicon glyphicon-search"></span> 搜索
 			</button>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span>&nbsp;新建店铺</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"><span class="glyphicon glyphicon-plus"></span> 新建店铺</button>
          </form> 
-   
+   				</div>
+   				</div>
          <div class="row" style="margin-left:0px;background-color:;"> 
+           <br/>
           <table class="table"> 
            <thead> 
             <tr> 
@@ -73,7 +77,7 @@
              <td>Mumbai</td> 
              <td>服饰店</td> 
              <td>#99</td> 
-             <th> <select class="form-control" onchange="operationChange()"> <option selected="selected">选择操作</option> <option operation="delete" value="1">删除该店铺信息</option> <option operation="update" value="2">修改该店铺信息</option> </select>  </th>
+             <td> <select class="form-control" onchange="operationChange()"> <option selected="selected">选择操作</option> <option operation="delete" value="1">删除该店铺信息</option> <option operation="update" value="2">修改该店铺信息</option> </select>  </td>
             </tr> 
            </tbody> 
           </table> 
@@ -104,7 +108,7 @@
            <div class="modal-content"> 
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增店铺</h4> 
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">修改店铺信息</h4> 
             </div> 
             <div class="modal-body"> 
              <form> 
@@ -169,7 +173,7 @@
            <div class="modal-content"> 
             <div class="modal-header"> 
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button> 
-             <h4 class="modal-title" id="exampleModalLabel">新增店铺</h4> 
+             <h4 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">新增店铺</h4> 
             </div> 
             <div class="modal-body"> 
              <form> 
@@ -228,7 +232,7 @@
         </div> 
        </div> 
       </div> 
-     </main> 
+
     </div> 
    </div> 
   </div>  

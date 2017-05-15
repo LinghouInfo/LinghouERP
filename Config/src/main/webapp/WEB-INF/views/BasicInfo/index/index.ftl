@@ -19,14 +19,14 @@
       <#include "left_index.ftl"/>
     </div> 
     <div class="col-md-11" style="padding:15px; padding-left:50px;"> 
-     <main name="right" style="">
+
    		    this is index... 
    
          </div>
         </div>
        </div>
       </div>
-     </main>
+
     </div>
    </div>
   </div>
